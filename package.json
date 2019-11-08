@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.7.1",
+    "canvas": "^2.6.0",
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
@@ -31,7 +32,8 @@
     "pug": "^2.0.4",
     "ramda": "^0.26.1",
     "snabbdom": "^0.7.3",
-    "universal-analytics": "^0.4.20"
+    "universal-analytics": "^0.4.20",
+    "yaml": "^1.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
