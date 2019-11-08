@@ -50,6 +50,7 @@
     "@types/morgan": "^1.7.37",
     "@types/ramda": "^0.26.33",
     "@types/universal-analytics": "^0.4.3",
+    "@types/yaml": "^1.2.0",
     "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
     "es6-shim": "^0.35.5",
