@@ -110,6 +110,8 @@ const PCCreate: (config: IPCCreateConfig) => IPCCreateFactory =
       const money: number = getMoney();
       const arms: IArm[] = getArms(money);
       const armors: IArmor[] = getArmors(money - gearCost(arms));
+      // tslint:disable-next-line:no-debugger
+      debugger;
       const magicPower: number = (progress ? progress.mp : 0) + attrBonus.inteligence;
       return {
         race: config.race.getName(),

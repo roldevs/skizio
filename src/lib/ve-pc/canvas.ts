@@ -6,6 +6,7 @@ const vepc: IVEPCFactory = VEPC({
   race: 'human',
   class: 'fighter',
   locale: 'es',
+  root: './',
 });
 
 vepc.fillCanvas().then((canvas: Canvas) => {

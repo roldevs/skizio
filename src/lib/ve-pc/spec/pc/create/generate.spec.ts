@@ -68,6 +68,9 @@ describe('PCCreate#get', () => {
         key: 'dexerety',
         value: 5,
       }, {
+        key: 'inteligence',
+        value: 3,
+      }, {
         key: 'constitution',
         value: 1,
       }],

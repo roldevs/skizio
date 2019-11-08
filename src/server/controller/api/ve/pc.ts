@@ -11,7 +11,7 @@ const vePcSheetRequest: (req: any, res: any) => Bluebird<any> =
       class: req.params.class,
       locale: req.params.locale,
       race: req.params.race,
-      root: './src/lib/ve-pc/'
+      root: './src/lib/ve-pc/',
     }).fillCanvas().then((canvas) => {
       return canvas.createPNGStream();
     });
