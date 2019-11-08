@@ -24,24 +24,24 @@ const app = express();
 
 app.use(errorhandler());
 app.set('port', process.env.PORT || 3000);
-// app.set('views', 'src/views');
-// app.set('view engine', 'pug');
-// app.use(morgan('combined'));
-// app.use(compression());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(session({
-//   resave: true,
-//   saveUninitialized: true,
-//   secret: process.env.SESSION_SECRET!,
-// }));
-// app.use(lusca.xframe('SAMEORIGIN'));
-// app.use(lusca.xssProtection(true));
-// app.use(express.static(staticsFolder));
+app.set('views', 'src/views');
+app.set('view engine', 'pug');
+app.use(morgan('combined'));
+app.use(compression());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: process.env.SESSION_SECRET!,
+}));
+app.use(lusca.xframe('SAMEORIGIN'));
+app.use(lusca.xssProtection(true));
+app.use(express.static(staticsFolder));
 
-// app.use(
-//   express.static(staticsFolder, { maxAge: 31557600000 }),
-// );
+app.use(
+  express.static(staticsFolder, { maxAge: 31557600000 }),
+);
 
 app.use('/api', routes);
 
