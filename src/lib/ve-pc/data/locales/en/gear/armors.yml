@@ -1,38 +1,38 @@
-- name: Cuero blando
+- name: Soft Leather
   defence: 1
   cost: 5
   except:
     - magic-user
-- name: Cuero
+- name: Leather
   defence: 2
   cost: 15
   except:
     - magic-user
-- name: Anillas
+- name: Ring
   defence: 3
   cost: 30
   except:
     - magic-user
     - rogue
-- name: Cota de Mallas
+- name: Chainmail
   defence: 4
   cost: 75
   except:
     - magic-user
     - rogue
-- name: Placas
+- name: Platemail
   defence: 6
   cost: 100
   except:
     - magic-user
     - rogue
-- name: Completa
+- name: Full armor
   defence: 7
   cost: 300
   except:
     - magic-user
     - rogue
-- name: Escudo
+- name: Shield
   defence: 1
   cost: 15
   except:

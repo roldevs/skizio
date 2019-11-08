@@ -1,104 +1,171 @@
-- size: '60px',
-  posx: 165,
-  posy: 550,
-  lense: ['level'],
-- size: '60px',
-  posx: 960,
-  posy: 190,
-  lense: ['race'],
-- size: '60px',
-  posx: 1365,
-  posy: 190,
-  lense: ['class'],
-- size: '60px',
-  posx: 440,
-  posy: 840,
-  lense: ['habilities', 'alertness'],
-- size: '60px',
-  posx: 440,
-  posy: 950,
-  lense: ['habilities', 'comunication'],
-- size: '60px',
-  posx: 440,
-  posy: 1060,
-  lense: ['habilities', 'lore'],
-- size: '60px',
-  posx: 440,
-  posy: 1170,
-  lense: ['habilities', 'manipulation'],
-- size: '60px',
-  posx: 440,
-  posy: 1280,
-  lense: ['habilities', 'stealth'],
-- size: '60px',
-  posx: 440,
-  posy: 1390,
-  lense: ['habilities', 'survival'],
-- size: '80px',
-  posx: 860,
-  posy: 740,
-  lense: ['attributes', 'strength'],
-- size: '80px',
-  posx: 860,
-  posy: 920,
-  lense: ['attributes', 'dexerety'],
-- size: '80px',
-  posx: 860,
-  posy: 1100,
-  lense: ['attributes', 'constitution'],
-- size: '80px',
-  posx: 860,
-  posy: 1280,
-  lense: ['attributes', 'inteligence'],
-- size: '80px',
-  posx: 860,
-  posy: 1460,
-  lense: ['attributes', 'wisdom'],
-- size: '80px',
-  posx: 860,
-  posy: 1640,
-  lense: ['attributes', 'charisma'],
-- size: '80px',
-  posx: 1000,
-  posy: 740,
-  lense: ['attr_bonus', 'strength'],
-- size: '80px',
-  posx: 1000,
-  posy: 920,
-  lense: ['attr_bonus', 'dexerety'],
-- size: '80px',
-  posx: 1000,
-  posy: 1100,
-  lense: ['attr_bonus', 'constitution'],
-- size: '80px',
-  posx: 1000,
-  posy: 1280,
-  lense: ['attr_bonus', 'inteligence'],
-- size: '80px',
-  posx: 1000,
-  posy: 1460,
-  lense: ['attr_bonus', 'wisdom'],
-- size: '80px',
-  posx: 1000,
-  posy: 1640,
-  lense: ['attr_bonus', 'charisma'],
-- size: '80px',
-  posx: 1540,
-  posy: 740,
-  lense: ['pv'],
-- size: '80px',
-  posx: 1540,
-  posy: 920,
-  lense: ['movement'],
-- size: '80px',
-  posx: 1540,
-  posy: 1280,
-  lense: ['atk'],
-- size: '80px',
-  posx: 1540,
-  posy: 1460,
-  lense: ['ins'],
-- size: '80px',
-  posx: 1540,
-  posy: 1640,
-  lense: ['mp'],
+- size: 60px
+  posx: 165
+  posy: 550
+  lense:
+    - level
+- size: 60px
+  posx: 960
+  posy: 190
+  lense:
+    - race
+- size: 60px
+  posx: 1365
+  posy: 190
+  lense:
+    - class
+- size: 40px
+  posx: 570
+  posy: 400
+  maxWidth: 500
+  lineHeight: 80
+  lense:
+    - talents
+- size: 60px
+  posx: 440
+  posy: 840
+  lense:
+    - habilities
+    - alertness
+- size: 60px
+  posx: 440
+  posy: 950
+  lense:
+    - habilities
+    - comunication
+- size: 60px
+  posx: 440
+  posy: 1060
+  lense:
+    - habilities
+    - lore
+- size: 60px
+  posx: 440
+  posy: 1170
+  lense:
+    - habilities
+    - manipulation
+- size: 60px
+  posx: 440
+  posy: 1280
+  lense:
+    - habilities
+    - stealth
+- size: 60px
+  posx: 440
+  posy: 1390
+  lense:
+    - habilities
+    - survival
+- size: 80px
+  posx: 860
+  posy: 740
+  lense:
+    - attributes
+    - strength
+- size: 80px
+  posx: 860
+  posy: 920
+  lense:
+    - attributes
+    - dexerety
+- size: 80px
+  posx: 860
+  posy: 1100
+  lense:
+    - attributes
+    - constitution
+- size: 80px
+  posx: 860
+  posy: 1280
+  lense:
+    - attributes
+    - inteligence
+- size: 80px
+  posx: 860
+  posy: 1460
+  lense:
+    - attributes
+    - wisdom
+- size: 80px
+  posx: 860
+  posy: 1640
+  lense:
+    - attributes
+    - charisma
+- size: 80px
+  posx: 1000
+  posy: 740
+  lense:
+    - attr_bonus
+    - strength
+- size: 80px
+  posx: 1000
+  posy: 920
+  lense:
+    - attr_bonus
+    - dexerety
+- size: 80px
+  posx: 1000
+  posy: 1100
+  lense:
+    - attr_bonus
+    - constitution
+- size: 80px
+  posx: 1000
+  posy: 1280
+  lense:
+    - attr_bonus
+    - inteligence
+- size: 80px
+  posx: 1000
+  posy: 1460
+  lense:
+    - attr_bonus
+    - wisdom
+- size: 80px
+  posx: 1000
+  posy: 1640
+  lense:
+    - attr_bonus
+    - charisma
+- size: 80px
+  posx: 1540
+  posy: 740
+  lense:
+    - pv
+- size: 80px
+  posx: 1540
+  posy: 920
+  lense:
+    - movement
+- size: 60px
+  posx: 1540
+  posy: 1110
+  lense:
+    - def
+- size: 80px
+  posx: 1540
+  posy: 1280
+  lense:
+    - atk
+- size: 80px
+  posx: 1540
+  posy: 1460
+  lense:
+    - ins
+- size: 80px
+  posx: 1540
+  posy: 1640
+  lense:
+    - mp
+- size: 40px
+  posx: 140
+  posy: 1900
+  lineHeight: 80
+  lense:
+    - arms
+- size: 40px
+  posx: 930
+  posy: 1900
+  lense:
+    - armors
