@@ -1,0 +1,8 @@
+/log
+/dist
+/node_modules
+/coverage
+/semantic
+/public/app.js
+.env
+meta.yml

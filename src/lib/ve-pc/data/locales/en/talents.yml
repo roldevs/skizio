@@ -1,0 +1,39 @@
+adaptable:
+  title: Adaptable
+  description: Somehow you adapt to any environment or surrounding. You gain an additional +1 bonus to your Instincts score.
+ambush:
+  title: Ambush
+  description: You have advantage in Stealth tests based on moving silently or hiding in shadows. Add 1d6 to the damage when you sneak attack.
+deadly_aim:
+  title: Deadly Aim
+  description: You have an extra +1 to your Attack bonus with ranged weapons.
+fight_with_x:
+  title: Fight with X
+  description: 'Replace X with: a one-handed weapon and shield, or two weapons, or two -handed weapons, or ranged weapons. When you fight in this style, you gain a +1 to your Attack bonus and your damage.'
+gumption:
+  title: Gumption
+  description: You live an intense life. Gain an extra background.
+infravision:
+  title: Infravision
+  description: You can see in the dark up to 20 yards. Vision is based on heat given off by objects.
+keen_sight:
+  title: Keen Sight
+  description: You have an advantage in Alertness tests based on sight.
+magical_ability:
+  title: Magical Ability
+  description: You can spend Magic Points to cast spells.
+multiple_strikes:
+  title: Multiple Strikes
+  description: When you defeat an enemy, you can make another attack immediately. In a given round, you can use this feat as many times as you have levels.
+nimble_fingers:
+  title: Nimble Fingers
+  description: You have an advantage in any Manipulation test that requires precision (e.g. picking locks or pickpocketing).
+sneaky:
+  title: Sneaky
+  description: You have an advantage in Stealth tests related to moving silently.
+stone_kinship:
+  title: Stone Kinship
+  description: You have an advantage in any Lore test related to stone work. You can also make an Alertness roll to detect traps built of stone.
+transfer_essence:
+  title: Transfer Essence
+  description: You can turn 3 Hit Points (HP) into 1 Magic Point (MP).

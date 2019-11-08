@@ -1,0 +1,39 @@
+- name: Cuero blando Ligera
+  defence: 1
+  cost: 5
+  except:
+    - magic-user
+- name: Cuero Ligera
+  defence: 2
+  cost: 15
+  except:
+    - magic-user
+- name: Anillas Media
+  defence: 3
+  cost: 30
+  except:
+    - magic-user
+    - rogue
+- name: Cota de Mallas Media
+  defence: 4
+  cost: 75
+  except:
+    - magic-user
+    - rogue
+- name: Placas
+  defence: 6
+  cost: 100
+  except:
+    - magic-user
+    - rogue
+- name: Completa
+  defence: 7
+  cost: 300
+  except:
+    - magic-user
+    - rogue
+- name: Escudo
+  defence: 1
+  cost: 15
+  except:
+    - magic-user

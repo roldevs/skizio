@@ -1,0 +1,42 @@
+{
+  "name": "ve-pc",
+  "version": "0.0.1",
+  "description": "Player Character generator for Vieja Escuela",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha 'spec/**/*.spec.ts' --opts mocha.opts"
+  },
+  "keywords": [
+    "vieja",
+    "escuela",
+    "osr",
+    "old",
+    "school",
+    "rpg",
+    "rol"
+  ],
+  "author": "Roberto M. Oliva",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.6.0",
+    "i18n-js": "^3.3.0",
+    "ramda": "^0.26.1",
+    "yaml": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "@types/i18n-js": "^3.0.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.6",
+    "@types/ramda": "^0.26.33",
+    "@types/yaml": "^1.2.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

@@ -1,0 +1,23 @@
+races:
+  dwarf: Dwarf
+  elf: Elf
+  halfing: Halfing
+  human: Human
+classes:
+  fighter: Fighter
+  magic-user: Magic User
+  rogue: Rogue
+talents:
+  adaptable: Adaptable
+  ambush: Ambush
+  deadly_aim: Deadly Aim
+  fight_with_x: Fight with X
+  gumption: Gumption
+  infravision: Infravision
+  keen_sight: Keen Sight
+  magical_ability: Magical Ability
+  multiple_strikes: Multiple Strikes
+  nimble_fingers: Nimble Fingers
+  sneaky: Sneaky
+  stone_kinship: Stone Kinship
+  transfer_essence: Transfer Essence

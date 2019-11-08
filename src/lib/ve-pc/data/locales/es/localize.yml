@@ -1,0 +1,23 @@
+races:
+  dwarf: Enano
+  elf: Elfo
+  halfing: Mediano
+  human: Humano
+classes:
+  fighter: Guerrero
+  magic-user: Hechicero
+  rogue: Bribón
+talents:
+  adaptable: Adaptable
+  ambush: Emboscar
+  deadly_aim: Certero
+  fight_with_x: Lucha con X
+  gumption: Ímpetu
+  infravision: 'Infravisión'
+  keen_sight: Vista Aguda
+  magical_ability: 'Sensibilidad Mágica'
+  multiple_strikes: 'Ataques Múltiples'
+  nimble_fingers: 'Dedos Ágiles'
+  sneaky: Escurridizo
+  stone_kinship: 'Afín a la Piedra'
+  transfer_essence: Transferir Esencia

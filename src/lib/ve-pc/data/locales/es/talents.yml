@@ -1,0 +1,39 @@
+adaptable:
+  title: Adaptable
+  description: De alguna forma tienes facilidad para adaptarte a cualquier ambiente y entorno. Ganas un modificador adicional de +1 a tu rasgo de Instintos.
+ambush:
+  title: Emboscar
+  description: Tienes ventaja en las pruebas de Subterfugio basadas en moverse en silencio y en ocultarse en las sombras. Añade 1d6 al daño cuando ataques a un blanco desprevenido.
+deadly_aim:
+  title: Certero
+  description: Tienes un bono adicional de +1 en todos los ataques de proyectiles.
+fight_with_x:
+  title: Lucha con X
+  description: 'Sustituye X por: arma de mano y escudo o dos armas de mano o armas a dos manos o armas de proyectiles. Peleando de esa forma ganas +1 al ataque y al daño.'
+gumption:
+  title: Ímpetu
+  description: Emprendedor Vives la vida con intensidad. Ganas un trasfondo adicional.
+infravision:
+  title: 'Infravisión'
+  description: Ves en la oscuridad hasta 20 metros. La visión se basa en el calor desprendido por los objetos.
+keen_sight:
+  title: Vista Aguda
+  description: Tienes ventaja en las pruebas de Alerta basadas en la vista.
+magical_ability:
+  title: 'Sensibilidad Mágica'
+  description: Puedes gastar puntos de poder (Pod) para realizar conjuros.
+multiple_strikes:
+  title: 'Ataques Múltiples'
+  description: Al abatir a un enemigo puedes realizar inmediatamente otro ataque. De esta forma puedes encadenar tantos ataques EXTRA como nivel tengas.
+nimble_fingers:
+  title: 'Dedos Ágiles'
+  description: Tienes ventaja en las pruebas de Manipulación que requieran precisión (por ejemplo abrir cerraduras o sustraer las posesiones de otra persona).
+sneaky:
+  title: Escurridizo
+  description: Tienes ventaja en las pruebas de Subterfugio relacionadas con moverse en silencio.
+stone_kinship:
+  title: 'Afín a la Piedra'
+  description: Tienes ventaja en cualquier prueba de Erudición relacionada con el trabajo sobre piedra. También puedes hacer una prueba de Alerta para detectar trampas hechas sobre roca.
+transfer_essence:
+  title: Transferir Esencia
+  description: Puedes convertir 3 puntos de vida en un punto de poder (Pod).

@@ -1,0 +1,100 @@
+doctype html
+html(lang="es")
+  head
+    meta(name= "viewport" content= "width=device-width, initial-scale=1.0, maximum-scale=1.0")
+    title= title
+    base(href= "/")
+    script(
+      type= 'text/javascript'
+      src= 'https://code.jquery.com/jquery-3.3.1.min.js'
+      integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+      crossorigin='anonymous'
+    )
+    link(
+      type= 'text/css'
+      href= '/semantic/semantic.min.css'
+      media= 'screen'
+      rel= 'stylesheet'
+    )
+    script(
+      type= 'text/javascript'
+      src= '/semantic/semantic.min.js'
+    )
+    script(
+      type= 'text/javascript'
+      src= '/home.js'
+    )
+    style(type= 'text/css').
+      body {
+        background-color: #FFFFFF;
+      }
+      .ui.menu .item img.logo {
+        margin-right: 1.5em;
+      }
+      .main.container {
+        margin-top: 3em;
+      }
+    script.
+      $(Hall.default({el: '#application', locale: 'es'}).init)
+
+  body
+    #application
+    //- .ui.fixed.inverted.menu
+    //-   .ui.container
+    //-     a(href='#' class='header item')
+    //-       //- img(class='logo' src='assets/images/logo.png')
+    //-       | Hall 9000
+
+    //-     //- .ui.simple.dropdown.item
+    //-     //-   Dropdown
+    //-     //-   i(class= "dropdown icon")
+    //-     //-   .menu
+    //-     //-     a(class="item" href="#") Link Item
+    //-     //-     a(class="item" href="#") Link Item
+    //-     //-     .divider
+    //-     //-     .header Header Item
+    //-     //-     .item
+    //-     //-       i(class= "dropdown icon")
+    //-     //-       Sub Menu
+    //-     //-       .menu
+    //-     //-         a(class="item" href="#") Link Item
+    //-     //-         a(class="item" href="#") Link Item
+    //-     //-     a(class="item" href="#") Link Item
+
+    //- .ui.main.text.container
+    //-   h1.ui.header Be prepared...
+
+    //- .ui.inverted.vertical.footer.segment
+    //-   .ui.center.aligned.container
+    //-     .ui.stackable.inverted.divided.grid
+    //-       .three.wide.column
+    //-         h4.ui.inverted.header Group 1
+    //-         .ui.inverted.link.list
+    //-           a.item(href="#") Link One
+    //-           a.item(href="#") Link Two
+    //-           a.item(href="#") Link Three
+    //-           a.item(href="#") Link Four
+    //-       .three.wide.column
+    //-         h4.ui.inverted.header Group 2
+    //-         .ui.inverted.link.list
+    //-           a.item(href="#") Link One
+    //-           a.item(href="#") Link Two
+    //-           a.item(href="#") Link Three
+    //-           a.item(href="#") Link Four
+    //-       .three.wide.column
+    //-         h4.ui.inverted.header Group 3
+    //-         .ui.inverted.link.list
+    //-           a.item(href="#") Link One
+    //-           a.item(href="#") Link Two
+    //-           a.item(href="#") Link Three
+    //-           a.item(href="#") Link Four
+    //-       .seven.wide.column
+    //-         h4.ui.inverted.header Footer Header
+    //-         p Extra space for a call to action inside the footer that could help re-engage users
+    //-   .ui.inverted.section.divider
+    //-   //- img.ui.centered.mini.image(src= "assets/images/logo.png")
+    //-   .ui.horizontal.inverted.small.divided.link.list
+    //-     a.item(href= "#") Site Map
+    //-     a.item(href= "#") Contact Us
+    //-     a.item(href= "#") Terms and Conditions
+    //-     a.item(href= "#") Privacy Policy
