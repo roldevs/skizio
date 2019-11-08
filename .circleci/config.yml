@@ -56,7 +56,7 @@ jobs:
       #       # upload test report to Code Climate using `after-build`
       #       ./cc-test-reporter after-build -t lcov --exit-code $?
       - run:
-          command: node_modules/.bin/mocha -r ts-node/register src/lib/spec/**/*.spec.ts src/lib/spec/**/**/*.spec.ts spec/**/*.spec.ts spec/**/**/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=~/junit/test-results.xml
+          command: node_modules/.bin/mocha -r ts-node/register src/lib/**/spec/**/*.spec.ts src/lib/**/spec/**/**/*.spec.ts spec/**/*.spec.ts spec/**/**/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=~/junit/test-results.xml
           when: always
       - store_test_results:
           path: ~/junit
