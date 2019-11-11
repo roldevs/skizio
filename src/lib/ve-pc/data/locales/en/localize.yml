@@ -1,7 +1,7 @@
 races:
   dwarf: Dwarf
   elf: Elf
-  halfing: Halfing
+  halfling: Halfing
   human: Human
 classes:
   fighter: Fighter

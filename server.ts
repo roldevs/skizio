@@ -24,7 +24,7 @@ const app = express();
 
 app.use(errorhandler());
 app.set('port', process.env.PORT || 3000);
-app.set('views', 'src/views');
+app.set('views', 'src/server/views');
 app.set('view engine', 'pug');
 app.use(morgan('combined'));
 app.use(compression());

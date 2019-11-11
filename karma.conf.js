@@ -17,7 +17,8 @@ module.exports = function(config) {
     files: [
       './node_modules/es6-shim/es6-shim.js',
       './node_modules/babel-polyfill/dist/polyfill.js',
-      './src/lib/**/spec/**/*.spec.ts'
+      './src/lib/**/*.ts',
+      {pattern: 'spec/**/*.spec.ts'},
     ],
 
 
