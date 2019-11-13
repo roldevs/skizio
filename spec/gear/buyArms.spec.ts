@@ -44,6 +44,7 @@ describe('Gear#buyArms', () => {
     root: './',
     file: gearTestFile(),
     locale: 'es',
+    system: 've.jdr',
   });
 
   const gear: IGearFactory = Gear({ loader });

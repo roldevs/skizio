@@ -14,24 +14,32 @@
   except:
     - magic-user
     - rogue
+    - multiform
+    - explorer
 - name: Chainmail
   defence: 4
   cost: 75
   except:
     - magic-user
     - rogue
+    - multiform
+    - explorer
 - name: Platemail
   defence: 6
   cost: 100
   except:
     - magic-user
     - rogue
+    - multiform
+    - explorer
 - name: Full armor
   defence: 7
   cost: 300
   except:
     - magic-user
     - rogue
+    - multiform
+    - explorer
 - name: Shield
   defence: 1
   cost: 15

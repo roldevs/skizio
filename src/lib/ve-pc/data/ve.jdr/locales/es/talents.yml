@@ -37,3 +37,21 @@ stone_kinship:
 transfer_essence:
   title: Transferir Esencia
   description: Puedes convertir 3 puntos de vida en un punto de poder (Pod).
+channel_miracles:
+  title: Canalizar Milagros
+  description: Cada nivel (empezando por el primero) debes acordar con el DJ dos nuevos “milagros” que añadir a tu lista, de la misma forma que un hechicero da forma a sus conjuros. Puedes añadir más de una vez el mismo milagro, ya que solo puedes invocar cada milagro una vez al día. El poder de los milagros debe estar en consonancia con el nivel en el que se ganan, y debe ser aceptado por el DJ. Puedes utilizar la lista del apéndice 2 como guía para diseñar tus milagros.
+read_runes:
+  title: Leer Runas
+  description: Puedes invocar milagros inscritos en pergaminos siempre que tengas el nivel requerido por el pergamino.
+hand_imposition:
+  title: 'Imposición de manos'
+  description: Puedes sanar hasta 3D6 Puntos de vida al día a través de tus manos. Puedes repartir estos dados como desees (1D6 tres veces, 3D6 una sola vez o 2D6 y 1D6).
+evil_detection:
+  title: 'Detección del mal'
+  description: El DJ establece la definición exacta de “mal”, que puede ir desde solo detectar criaturas demoníacas o caóticas, hasta identificar a cualquier individuo que quiera dañarte.
+enemy_knowledge:
+  title: Conocimiento del Enemigo
+  description: Elige un tipo de enemigo contra el que te has especializado (orcos, goblins, kobolds, gigantes, etc.). Cuando atacas a una de esas criaturas obtienes ventaja.
+expert_guide:
+  title: 'Guía Experto'
+  description: Obtienes ventaja en las tiradas de Supervivencia relacionadas con seguir rastros, orientarte o conseguir suministros al aire libre.

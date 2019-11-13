@@ -10,6 +10,7 @@ interface ILoaderConfig {
   root: string;
   file: IFileFactory;
   locale: string;
+  system: string;
 }
 
 interface ILoaderFactory {
@@ -29,12 +30,14 @@ interface ILoaderFactory {
 type TLoader = (config: ILoaderConfig) => ILoaderFactory;
 
 const Loader: TLoader = (config) => {
-  const baseRaceDir: string = `${config.root}data/races/`;
-  const baseClassDir: string = `${config.root}data/classes/`;
-  const baseGearDir: string = `${config.root}data/locales/${config.locale}/gear/`;
+  const dataBaseDir: string = `${config.root}data/${config.system}/`;
+
+  const baseRaceDir: string = `${dataBaseDir}races/`;
+  const baseClassDir: string = `${dataBaseDir}classes/`;
+  const baseGearDir: string = `${dataBaseDir}locales/${config.locale}/gear/`;
 
   const localizePath: () => string =
-    () => `${config.root}data/locales/${config.locale}/localize.yml`;
+    () => `${dataBaseDir}locales/${config.locale}/localize.yml`;
 
   const classPath: (className: string) => string =
     (className) => `${baseClassDir}${className}.yml`;
@@ -43,13 +46,13 @@ const Loader: TLoader = (config) => {
     (race) => `${baseRaceDir}${race}.yml`;
 
   const canvasSheetDataPath: () => string =
-    () => `${config.root}data/locales/${config.locale}/canvas_sheet.yml`;
+    () => `${dataBaseDir}locales/${config.locale}/canvas_sheet.yml`;
 
   const getCanvasSheetImagePath: () => string =
-    () => `${config.root}data/locales/${config.locale}/sheet.png`;
+    () => `${dataBaseDir}locales/${config.locale}/sheet.png`;
 
   const backgroundPath: string =
-    `${config.root}data/locales/${config.locale}/backgrounds.yml`;
+    `${dataBaseDir}locales/${config.locale}/backgrounds.yml`;
 
   const getStrengthArmPath: () => string =
     () => `${baseGearDir}strength.yml`;

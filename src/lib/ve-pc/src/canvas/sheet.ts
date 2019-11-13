@@ -103,7 +103,7 @@ const CanvasSheet: TCanvasSheet =
     // TODO: Apply SOLID principles
     const printValue: (pcObject: IPC, element: ICanvasElement) => void =
       (pcObject, element) => {
-        const fontFamily: string = element.font || 'Arial';
+        const fontFamily: string = 'Bonbon';
         context.font = `${element.size} ${fontFamily}`;
         if (R.contains('arms', element.lense)) {
           return printArmElements(pcObject, element);

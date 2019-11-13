@@ -70,6 +70,7 @@ describe('Loader#getClass', () => {
     root: './',
     file: fileTest,
     locale: 'es',
+    system: 've.jdr',
   };
   const loader: ILoaderFactory = Loader(config);
   const cls: IClassFactory = loader.getClass('fighter');

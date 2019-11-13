@@ -11,10 +11,13 @@ const layoutModule = (sb: any) => {
   const onModuleInit = (config: any, done: () => void) => {
     view.init({
       locale: sb.locale.get(),
+      system: 've.jdr',
       class: null,
       race: null,
       level: 0,
       createBtnEnabled: false,
+      threeBonus: 'twoBonus',
+      url: '',
     });
     vdom = document.getElementById(config.el);
     flyd.on(render, view.stream$);

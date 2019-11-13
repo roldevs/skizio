@@ -60,6 +60,7 @@ describe('Gear#validArms', () => {
     root: './',
     file: gearTestFile(),
     locale: 'es',
+    system: 've.jdr',
   });
 
   const gear: IGearFactory = Gear({ loader });

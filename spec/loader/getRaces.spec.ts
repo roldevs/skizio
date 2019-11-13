@@ -14,6 +14,7 @@ describe('Loader#getRaces', () => {
     root: './',
     file: fileTest,
     locale: 'es',
+    system: 've.jdr',
   };
   const loader: ILoaderFactory = Loader(config);
   it('returns expected races', () => {

@@ -1,4 +1,3 @@
-// tslint:disable:no-console
 import Bluebird from 'bluebird';
 import * as R from 'ramda';
 import * as scaleApp from 'scaleapp';

@@ -3,6 +3,9 @@
   cost: 5
   except:
     - magic-user
+    - rogue
+    - multiform
+    - explorer
 - name: Club
   damage: 1d4
   cost: 0
@@ -14,11 +17,17 @@
   cost: 1
   except:
     - magic-user
+    - rogue
+    - multiform
+    - explorer
 - name: Heavy Mace
   damage: 1d8
   cost: 1
   except:
     - magic-user
+    - rogue
+    - multiform
+    - explorer
 - name: Spear
   damage: 1d6
   cost: 1
@@ -32,6 +41,9 @@
   cost: 15
   except:
     - magic-user
+    - rogue
+    - multiform
+    - explorer
 - name: Short Sword
   damage: 1d6
   cost: 8
@@ -42,8 +54,14 @@
   cost: 30
   except:
     - magic-user
+    - rogue
+    - multiform
+    - explorer
 - name: Great Ax
   damage: 1d8+1
   cost: 22
   except:
     - magic-user
+    - rogue
+    - multiform
+    - explorer

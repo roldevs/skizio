@@ -1,8 +1,8 @@
 import R from 'ramda';
+import { IBonusFactory, TBonus } from '../../typings/bonus';
 import { IClassProgressItem } from '../../typings/class';
 import { IHash } from '../../typings/common';
 import { IPC } from '../../typings/pc';
-import { Bonus } from '../bonus';
 import { IClassFactory } from '../class';
 import { Dice, TDice } from '../dice';
 import { IArm, IArmor, IGearFactory } from '../gear';
@@ -19,6 +19,7 @@ interface IPCCreateConfig {
   dice: TDice;
   backgrounds: string[];
   gear: IGearFactory;
+  bonus: TBonus;
 }
 
 interface IPCCreateFactory {
@@ -58,7 +59,7 @@ const PCCreate: (config: IPCCreateConfig) => IPCCreateFactory =
       };
 
     const generateBonus: (attributes: IHash) => IHash =
-      (attributes) => Bonus({ attributes }).get();
+      (attributes) => config.bonus({ attributes }).get();
 
     const generateHabilites: () => IHash =
       () => {
@@ -110,8 +111,6 @@ const PCCreate: (config: IPCCreateConfig) => IPCCreateFactory =
       const money: number = getMoney();
       const arms: IArm[] = getArms(money);
       const armors: IArmor[] = getArmors(money - gearCost(arms));
-      // tslint:disable-next-line:no-debugger
-      debugger;
       const magicPower: number = (progress ? progress.mp : 0) + attrBonus.inteligence;
       return {
         race: config.race.getName(),

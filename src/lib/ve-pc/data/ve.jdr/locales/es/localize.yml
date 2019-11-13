@@ -7,6 +7,11 @@ classes:
   fighter: Guerrero
   magic-user: Hechicero
   rogue: Bribón
+  cleric: Clérigo
+  paladin: Paladín
+  explorer: Explorador
+  bard: Bardo
+  multiform: Multiforme
 talents:
   adaptable: Adaptable
   ambush: Emboscar
@@ -21,3 +26,13 @@ talents:
   sneaky: Escurridizo
   stone_kinship: 'Afín a la Piedra'
   transfer_essence: Transferir Esencia
+  channel_miracles: Canalizar Milagros
+  read_runes: Leer Runas
+  hand_imposition: 'Imposición de manos'
+  evil_detection: 'Detección del mal'
+  enemy_knowledge: Conocimiento del Enemigo
+  expert_guide: 'Guía Experto'
+  read_languages: Leer lenguajes
+  enchant_person: Encantar Persona/Monstruo
+  transformation: 'Transformación'
+  forest_ranger: Guardabosques

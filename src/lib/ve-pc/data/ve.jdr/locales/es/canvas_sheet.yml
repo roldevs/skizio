@@ -20,6 +20,11 @@
   lineHeight: 80
   lense:
     - talents
+- size: 40px
+  posx: 1150
+  posy: 400
+  lense:
+    - background
 - size: 60px
   posx: 440
   posy: 840

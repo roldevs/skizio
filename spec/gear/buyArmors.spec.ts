@@ -40,6 +40,7 @@ describe('Gear#buyArmors', () => {
     root: './',
     file: gearTestFile(),
     locale: 'es',
+    system: 've.jdr',
   });
 
   const gear: IGearFactory = Gear({ loader });

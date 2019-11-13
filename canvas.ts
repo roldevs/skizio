@@ -1,12 +1,14 @@
 import { Canvas } from 'canvas';
 import fs from 'fs';
-import { IVEPCFactory, VEPC } from '.';
+import { IVEPCFactory, VEPC } from './src/lib/ve-pc';
 
 const vepc: IVEPCFactory = VEPC({
   race: 'human',
   class: 'fighter',
-  locale: 'es',
-  root: './',
+  locale: 'en',
+  root: './src/lib/ve-pc/',
+  threeBonus: false,
+  system: 've.jdr',
 });
 
 vepc.fillCanvas().then((canvas: Canvas) => {

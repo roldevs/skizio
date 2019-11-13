@@ -14,6 +14,7 @@ describe('Loader#getClasses', () => {
     root: './',
     file: fileTest,
     locale: 'es',
+    system: 've.jdr',
   };
   const loader: ILoaderFactory = Loader(config);
   it('returns expected classes', () => {

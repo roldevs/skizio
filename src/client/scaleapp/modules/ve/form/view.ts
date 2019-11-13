@@ -10,6 +10,8 @@ const texts: any = {
     select_race: 'Choose a Race',
     class: 'Class',
     select_class: 'Choose a Class',
+    label_bonus: 'Bonus',
+    select_bonus: 'Choose Bonus range',
     races: {
       elf: 'Elf',
       dwarf: 'Dwarf',
@@ -20,14 +22,25 @@ const texts: any = {
       'fighter': 'Fighter',
       'magic-user': 'Magic User',
       'rogue': 'Rogue',
+      'cleric': 'Cleric',
+      'paladin': 'Paladin',
+      'explorer': 'Explorer',
+      'bard': 'Bard',
+      'multiform': 'Multiform',
     },
     create_btn_label: 'Create character sheet for Vieja Escuela',
+    bonus: {
+      two: '-2/+2 Bonus',
+      three: '-3/+3 Bonus',
+    },
   },
   es: {
     race: 'Raza',
     select_race: 'Seleccione una Raza',
     class: 'Clase',
     select_class: 'Seleccione una Clase',
+    label_bonus: 'Bonus',
+    select_bonus: 'Seleccione un rango de Bonus',
     races: {
       elf: 'Elfo',
       dwarf: 'Enano',
@@ -38,46 +51,62 @@ const texts: any = {
       'fighter': 'Guerrero',
       'magic-user': 'Hechicero',
       'rogue': 'Bribón',
+      'cleric': 'Clérigo',
+      'paladin': 'Paladín',
+      'explorer': 'Explorador',
+      'bard': 'Bardo',
+      'multiform': 'Multiforme',
     },
     create_btn_label: 'Crear hoja de personaje para Vieja Escuela',
+    bonus: {
+      two: '-2/+2 Bonus',
+      three: '-3/+3 Bonus',
+    },
   },
 };
 
 const raceItems: (locale: string) => IDropdownItem[] =
   (locale: string) => {
-    return [{
-      id: 'elf',
-      text: texts[locale].races.elf,
-      value: 'elf',
-    }, {
-      id: 'dwarf',
-      text: texts[locale].races.dwarf,
-      value: 'dwarf',
-    }, {
-      id: 'halfling',
-      text: texts[locale].races.halfling,
-      value: 'halfling',
-    }, {
-      id: 'human',
-      text: texts[locale].races.human,
-      value: 'human',
-    }];
+    const getItem: (cls: string) => IDropdownItem =
+      (cls) => {
+        return {
+          id: cls,
+          text: texts[locale].races[cls],
+          value: cls,
+        };
+      };
+    return R.map(
+      getItem,
+      ['elf', 'dwarf', 'halfling', 'human'],
+    );
   };
 
 const classItems: (locale: string) => IDropdownItem[] =
   (locale) => {
+    const getItem: (cls: string) => IDropdownItem =
+      (cls) => {
+        return {
+          id: cls,
+          text: texts[locale].classes[cls],
+          value: cls,
+        };
+      };
+    return R.map(
+      getItem,
+      ['fighter', 'magic-user', 'rogue', 'cleric', 'paladin', 'explorer', 'bard', 'multiform'],
+    );
+  };
+
+const typeBonusItems: (locale: string) => IDropdownItem[] =
+  (locale) => {
     return [{
-      id: 'fighter',
-      text: texts[locale].classes.fighter,
-      value: 'fighter',
+      id: 'twoBonus',
+      text: texts[locale].bonus.two,
+      value: 'twoBonus',
     }, {
-      id: 'magic-user',
-      text: texts[locale].classes['magic-user'],
-      value: 'magic-user',
-    }, {
-      id: 'rogue',
-      text: texts[locale].classes.rogue,
-      value: 'rogue',
+      id: 'threeBonus',
+      text: texts[locale].bonus.three,
+      value: 'threeBonus',
     }];
   };
 
@@ -99,6 +128,15 @@ const getRaceText: (model: IVEFormModelFactory) => string | null =
       return null;
     }
     return selectedRace.text;
+  };
+
+const getBonusText: (model: IVEFormModelFactory) => string | null =
+  (model) => {
+    const state: IVEFormModel = model.stream$();
+    if (state.threeBonus === 'twoBonus') {
+      return texts[state.locale].bonus.two;
+    }
+    return texts[state.locale].bonus.three;
   };
 
 const getClassText: (model: IVEFormModelFactory) => string | null =
@@ -137,12 +175,23 @@ const dropdownClasses: (model: IVEFormModelFactory) => VNode =
     callback: model.setClass,
   }).render();
 
+const dropdownBonus: (model: IVEFormModelFactory) => VNode =
+  (model) => dropdown({
+    id: 'bonus_dropdown',
+    placeholder: texts[model.stream$().locale].select_bonus,
+    value: getBonusText(model),
+    name: 'bonus',
+    disabled: false,
+    options: typeBonusItems(model.stream$().locale),
+    callback: model.setBonus,
+  }).render();
+
 const createBtn: (model: IVEFormModelFactory) => VNode =
   (model) => {
     const state: IVEFormModel = model.stream$();
     return h('a', {
       attrs: {
-        href: `/api/ve/pc/${state.locale}/${state.level}/${state.race}/${state.class}/sheet.png`,
+        href: state.url,
         target: '_blank',
       },
       class: {
@@ -157,16 +206,50 @@ const createBtn: (model: IVEFormModelFactory) => VNode =
 const viewFn: (model: IVEFormModelFactory) => VNode =
   (model) => {
     const state: IVEFormModel = model.stream$();
-    return h('div', { attrs: { id: 'body' }, class: { ui: true, form: true } }, [
-      h('div', { class: { inline: true, field: true } }, [
-        h('label', texts[state.locale].race),
-        dropdownRaces(model),
+    return h('div', {
+      class: {
+        ui: true,
+        items: true,
+      },
+    }, [
+      h('div', {
+        class: {
+          item: true,
+        },
+      }, [
+        h('div', {
+          class: {
+            image: true,
+          },
+        }, [
+          h('img', {
+            attrs: {
+              src: '/images/ve.jdr.png',
+            },
+          }),
+        ]),
+        h('div', {
+          class: {
+            content: true,
+          },
+        }, [
+          h('div', { attrs: { id: 'body' }, class: { ui: true, form: true } }, [
+            h('div', { class: { inline: true, field: true } }, [
+              h('label', texts[state.locale].race),
+              dropdownRaces(model),
+            ]),
+            h('div', { class: { inline: true, field: true } }, [
+              h('label', texts[state.locale].class),
+              dropdownClasses(model),
+            ]),
+            h('div', { class: { inline: true, field: true } }, [
+              h('label', texts[state.locale].label_bonus),
+              dropdownBonus(model),
+            ]),
+            createBtn(model),
+          ]),
+        ]),
       ]),
-      h('div', { class: { inline: true, field: true } }, [
-        h('label', texts[state.locale].class),
-        dropdownClasses(model),
-      ]),
-      createBtn(model),
     ]);
   };
 

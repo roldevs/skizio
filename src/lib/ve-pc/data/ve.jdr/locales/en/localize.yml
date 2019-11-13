@@ -7,6 +7,11 @@ classes:
   fighter: Fighter
   magic-user: Magic User
   rogue: Rogue
+  cleric: Cleric
+  paladin: Paladin
+  explorer: Explorer
+  bard: Bard
+  multiform: Multiform
 talents:
   adaptable: Adaptable
   ambush: Ambush
@@ -21,3 +26,13 @@ talents:
   sneaky: Sneaky
   stone_kinship: Stone Kinship
   transfer_essence: Transfer Essence
+  channel_miracles: Channel Miracles
+  read_runes: Read Runes
+  hand_imposition: Hand Imposition
+  evil_detection: Evil Detection
+  enemy_knowledge: Enemy Knowledge
+  expert_guide: Expert Guide
+  read_languages: Read Languages
+  enchant_person: Enchant Person/Monster
+  transformation: Transformation
+  forest_ranger: Forest Ranger

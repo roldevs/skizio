@@ -1,0 +1,75 @@
+name: 'multiform'
+hit_dice: 6
+priorities:
+  attributes:
+    - key: strength
+      value: 3
+    - key: dexerety
+      value: 1
+    - key: constitution
+      value: 5
+    - key: inteligence
+      value: 4
+    - key: wisdom
+      value: 2
+    - key: charisma
+      value: 6
+  habilities:
+    - key: alertness
+      value: 3
+    - key: comunication
+      value: 6
+    - key: manipulation
+      value: 4
+    - key: lore
+      value: 5
+    - key: stealth
+      value: 1
+    - key: survival
+      value: 2
+talents:
+  - transformation
+  - forest_ranger
+progress:
+  - atk: 0
+    mp: 1
+    ins: 1
+  - atk: 0
+    mp: 2
+    ins: 2
+  - atk: 1
+    mp: 3
+    ins: 3
+  - atk: 1
+    mp: 4
+    ins: 4
+  - atk: 2
+    mp: 5
+    ins: 5
+  - atk: 2
+    mp: 6
+    ins: 6
+  - atk: 3
+    mp: 7
+    ins: 7
+  - atk: 4
+    mp: 7
+    ins: 8
+  - atk: 5
+    mp: 8
+    ins: 9
+  - atk: 6
+    mp: 8
+    ins: 10
+  - atk: 6
+    mp: 9
+    ins: 10
+  - atk: 7
+    mp: 9
+    ins: 11
+  - atk: 7
+    mp: 10
+    ins: 11
+  - atk: 7
+    mp: 10
+    ins: 11

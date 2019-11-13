@@ -63,6 +63,7 @@ describe('Loader#getRace', () => {
     root: './',
     file: fileTest,
     locale: 'es',
+    system: 've.jdr',
   };
   const loader: ILoaderFactory = Loader(config);
   const race: IRaceFactory = loader.getRace('elf');

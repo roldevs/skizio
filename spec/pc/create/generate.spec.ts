@@ -1,15 +1,16 @@
 // tslint:disable:no-unused-expression
 import { expect } from 'chai';
 import R from 'ramda';
+import { BonusTwo } from '../../../src/lib/ve-pc/src/bonus/two';
 import { Class, IClassFactory } from '../../../src/lib/ve-pc/src/class';
 import { Dice } from '../../../src/lib/ve-pc/src/dice';
 import { Gear, IGearFactory } from '../../../src/lib/ve-pc/src/gear';
 import { Items } from '../../../src/lib/ve-pc/src/items';
 import { ILoaderFactory, Loader } from '../../../src/lib/ve-pc/src/loader';
-import { defaultPC, IPCCreateConfig, PCCreate } from '../../../src/lib/ve-pc/src/pc/create';
+import { IPCCreateConfig, PCCreate } from '../../../src/lib/ve-pc/src/pc/create';
 import { IRaceFactory, Race } from '../../../src/lib/ve-pc/src/race';
+import { TBonus } from '../../../src/lib/ve-pc/typings/bonus';
 import { IClassDef } from '../../../src/lib/ve-pc/typings/class';
-import { IItem } from '../../../src/lib/ve-pc/typings/common';
 import { IFileFactory } from '../../../src/lib/ve-pc/typings/file';
 import { IPC } from '../../../src/lib/ve-pc/typings/pc';
 import { IRaceDef } from '../../../src/lib/ve-pc/typings/race';
@@ -122,11 +123,13 @@ describe('PCCreate#get', () => {
     root: './',
     file: gearTestFile(),
     locale: 'es',
+    system: 've.jdr',
   });
   const gear: IGearFactory = Gear({ loader });
   const startHabilityPoints = 4;
   const race: IRaceFactory = Race(raceDef);
   const cl: IClassFactory = Class(classDef);
+  const bonus: TBonus = BonusTwo;
   const config: IPCCreateConfig = {
     startHabilityPoints,
     race,
@@ -134,6 +137,7 @@ describe('PCCreate#get', () => {
     dice: Dice,
     backgrounds,
     gear,
+    bonus,
   };
   const attributes: string[] = R.map(R.prop('key'), Items({
     itemsA: race.getAttributes(),

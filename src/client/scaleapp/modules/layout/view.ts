@@ -147,38 +147,7 @@ const viewFn: (locale: string) => VNode =
         container: true,
       },
     }, [
-      h('div', {
-        class: {
-          ui: true,
-          items: true,
-        },
-      }, [
-        h('div', {
-          class: {
-            item: true,
-          },
-        }, [
-          h('div', {
-            class: {
-              image: true,
-            },
-          }, [
-            h('img', {
-              attrs: {
-                src: '/images/ve.png',
-              },
-            }),
-          ]),
-          h('div', {
-            class: {
-              content: true,
-            },
-          }, [
-            h('div', { props: { id: 'header' } } ),
-            h('div', { props: { id: 'body' } } ),
-          ]),
-        ]),
-      ]),
+      h('div', { props: { id: 'body' } } ),
     ]),
   ]);
 };
