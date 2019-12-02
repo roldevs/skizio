@@ -33,7 +33,7 @@ talents:
     - fight_with_x
     - multiple_strikes
 progress:
-  - atk: 0
+  - atk: 1
     mp: 0
     ins: 0
   - atk: 1
