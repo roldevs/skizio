@@ -18,7 +18,7 @@ module.exports = (() => {
       home: './home',
     },
     output: {
-      path: path.join(__dirname, '../../public'),
+      path: path.join(__dirname, '../../public/javascripts'),
       filename: "[name].js",
       libraryTarget: 'var',
       library: 'Hall'

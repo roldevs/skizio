@@ -5,16 +5,19 @@ import viewFn from './view';
 
 const layoutModule = (sb: any) => {
   let vdom: any;
-  const view: IVEFormModelFactory = VEFormModel();
+  const view: IVEFormModelFactory = VEFormModel(sb);
   const subscriptions = {};
 
   const onModuleInit = (config: any, done: () => void) => {
     view.init({
+      loading: false,
       locale: sb.locale.get(),
       system: 've.jdr',
+      races: [],
+      classes: [],
       class: null,
       race: null,
-      level: 0,
+      level: 1,
       createBtnEnabled: false,
       threeBonus: 'twoBonus',
       url: '',

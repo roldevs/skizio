@@ -1,0 +1,7 @@
+name: 'patido'
+localize: "Pátido"
+movement: 12
+talents:
+  1:
+    - acuatic
+    - brave

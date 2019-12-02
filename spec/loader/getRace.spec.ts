@@ -1,56 +1,22 @@
 // tslint:disable:no-unused-expression
 import { expect } from 'chai';
-import R from 'ramda';
-import { FileTest, IFileTestDefinition, TFileTest } from '../../src/lib/ve-pc/src/file/test';
-import { ILoaderConfig, ILoaderFactory, Loader, TLoader } from '../../src/lib/ve-pc/src/loader';
+import { FileTest, IFileTestDefinition } from '../../src/lib/ve-pc/src/file/test';
+import { ILoaderConfig, ILoaderFactory, Loader } from '../../src/lib/ve-pc/src/loader';
 import { IRaceFactory } from '../../src/lib/ve-pc/src/race';
-import { IClassDef } from '../../src/lib/ve-pc/typings/class';
 import { IFileFactory } from '../../src/lib/ve-pc/typings/file';
 import { IRaceDef } from '../../src/lib/ve-pc/typings/race';
+import { ITalentDef } from '../../src/lib/ve-pc/typings/talent';
 
 describe('Loader#getRace', () => {
   const name: string = 'elf';
   const movement: number = 12;
-  const attributes = [{
-    key: 'strength',
-    value: 1,
-  }, {
-    key: 'dexerety',
-    value: 2,
-  }, {
-    key: 'constitution',
-    value: 3,
-  }];
-  const habilities = [{
-    key: 'alertness',
-    value: 4,
-  }, {
-    key: 'comunication',
-    value: 3,
-  }, {
-    key: 'manipulation',
-    value: 5,
-  }, {
-    key: 'lore',
-    value: 6,
-  }, {
-    key: 'stealth',
-    value: 1,
-  }, {
-    key: 'survival',
-    value: 2,
-  }];
-  const talents = [
-    'talent1',
-    'talent2',
-  ];
+  const talents: ITalentDef = {
+    1: ['talent1', 'talent2'],
+  };
   const raceDef: IRaceDef = {
     name,
+    localize: name,
     movement,
-    priorities: {
-      attributes,
-      habilities,
-    },
     talents,
   };
 
@@ -60,7 +26,6 @@ describe('Loader#getRace', () => {
 
   const fileTest: IFileFactory = FileTest(fileTestConfig);
   const config: ILoaderConfig = {
-    root: './',
     file: fileTest,
     locale: 'es',
     system: 've.jdr',
@@ -72,14 +37,8 @@ describe('Loader#getRace', () => {
     it('getName', () => {
       expect(race.getName()).to.eql(name);
     });
-    it('getAttributes', () => {
-      expect(race.getAttributes()).to.eql(attributes);
-    });
-    it('getHabilites', () => {
-      expect(race.getHabilites()).to.eql(habilities);
-    });
     it('getTalents', () => {
-      expect(race.getTalents()).to.eql(talents);
+      expect(race.getTalents(1)).to.have.members(['talent1', 'talent2']);
     });
     it('getMovement', () => {
       expect(race.getMovement()).to.eql(movement);

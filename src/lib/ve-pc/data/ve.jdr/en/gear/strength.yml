@@ -1,0 +1,75 @@
+- name: Battle Ax
+  damage: 1d8
+  cost: 5
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Club
+  damage: 1d4
+  cost: 0
+- name: Dagger
+  damage: 1d4
+  cost: 2
+- name: War Hammer
+  damage: 1d4+1
+  cost: 1
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Heavy Mace
+  damage: 1d8
+  cost: 1
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Spear
+  damage: 1d6
+  cost: 1
+  except:
+    - magic-user
+    - necromancer
+- name: Quarterstaff
+  damage: 1d6
+  cost: 0
+- name: Long Sword
+  damage: 1d8
+  cost: 15
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Short Sword
+  damage: 1d6
+  cost: 8
+  except:
+    - magic-user
+    - necromancer
+- name: Two-handed Sword
+  damage: 1d10
+  cost: 30
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Great Ax
+  damage: 1d8+1
+  cost: 22
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer

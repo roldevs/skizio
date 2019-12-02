@@ -1,0 +1,36 @@
+- name: Bow
+  damage: 1d6
+  cost: 15
+  except:
+    - magic-user
+    - necromancer
+- name: Long Bow
+  damage: 1d6
+  cost: 25
+  except:
+    - magic-user
+    - necromancer
+- name: Dagger
+  damage: 1d4+1
+  cost: 12
+  except:
+    - magic-user
+    - necromancer
+- name: Heavy Crossbow
+  damage: 1d6+1
+  cost: 25
+  except:
+    - magic-user
+    - necromancer
+- name: Light Crossbow
+  damage: 1d4
+  cost: 2
+- name: Sling
+  damage: 1d4
+  cost: 0
+- name: Spear
+  damage: 1d6
+  cost: 1
+  except:
+    - magic-user
+    - necromancer

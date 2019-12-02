@@ -1,4 +1,5 @@
 // tslint:disable:no-unused-expression
+import Bluebird from 'bluebird';
 import { expect } from 'chai';
 import R from 'ramda';
 import { Gear, IArm, IGearFactory } from '../../src/lib/ve-pc/src/gear';
@@ -39,7 +40,7 @@ describe('Gear#validArms', () => {
   }];
 
   const gearTestFile: () => IFileFactory = () => {
-    const listDir: (path: string) => string[] = () => [];
+    const listDir: (path: string) => Bluebird<string[]> = () => Bluebird.resolve([]);
     const loadYAML: (path: string) => any = (path) => {
       if (path.includes('strength')) {
         return strengthArms;
@@ -51,13 +52,13 @@ describe('Gear#validArms', () => {
     };
 
     return {
+      addRoot: () => '',
       listDir,
       loadYAML,
     };
   };
 
   const loader: ILoaderFactory = Loader({
-    root: './',
     file: gearTestFile(),
     locale: 'es',
     system: 've.jdr',

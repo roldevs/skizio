@@ -1,14 +1,10 @@
 // tslint:disable:no-unused-expression
 import { expect } from 'chai';
 import R from 'ramda';
-import { Class, IClassFactory } from '../../src/lib/ve-pc/src/class';
+import { Class } from '../../src/lib/ve-pc/src/class';
 import { TDice } from '../../src/lib/ve-pc/src/dice';
 import { HitPoints, IHitPointsConfig } from '../../src/lib/ve-pc/src/hit_points';
-import { Items } from '../../src/lib/ve-pc/src/items';
-import { IRaceFactory, Race } from '../../src/lib/ve-pc/src/race';
 import { IClassDef } from '../../src/lib/ve-pc/typings/class';
-import { IItem } from '../../src/lib/ve-pc/typings/common';
-import { IRaceDef } from '../../src/lib/ve-pc/typings/race';
 import { TestDice } from '../dice/test_dice';
 
 describe('HitPoints#incrementLevel', () => {
@@ -18,6 +14,7 @@ describe('HitPoints#incrementLevel', () => {
   const testDice: TDice = TestDice(diceResult);
   const classDef: IClassDef = {
     name,
+    localize: name,
     hit_dice: hitDice,
     priorities: {
       attributes: [],

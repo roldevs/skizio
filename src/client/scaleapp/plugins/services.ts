@@ -1,16 +1,17 @@
 import * as hasher from 'hasher';
 import * as R from 'ramda';
 import * as scaleApp from 'scaleapp';
+import servicesInit from '../../services/init';
 
-const pluginFn: scaleApp.IPluginInitFn = () => {
+const pluginFn: scaleApp.IPluginInitFn = (core: any) => {
   // Inicializar los servicios
-  // const services = servicesInit({core});
+  const services = servicesInit({core});
 
   // Extender el core
-  // core.services = services;
+  core.services = services;
 
   // Extender el sandbox
-  // core.Sandbox.prototype.services = services;
+  core.Sandbox.prototype.services = services;
 
   return {
     init: () => { /* Empty method placeholder */ },

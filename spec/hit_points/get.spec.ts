@@ -18,6 +18,7 @@ describe('HitPoints#get', () => {
   const hitDice: number = 8;
   const classDef: IClassDef = {
     name,
+    localize: name,
     hit_dice: hitDice,
     priorities: {
       attributes: [],
@@ -58,9 +59,6 @@ describe('HitPoints#get', () => {
         const result: number = hitPoints.get(level, constitution);
         const base: number = constitution + hitDice;
         const expected: number = base + 9 * (diceResult + constitution) + (level - 10) * constitution;
-
-        // tslint:disable-next-line:no-console
-        console.log(level, expected);
 
         expect(result).to.be.eql(expected);
       });

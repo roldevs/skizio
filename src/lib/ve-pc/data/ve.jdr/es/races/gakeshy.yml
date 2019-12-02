@@ -1,0 +1,7 @@
+name: 'gakeshy'
+localize: 'Gakeshy'
+movement: 12
+talents:
+  1:
+    - innate_healer
+    - great_memory

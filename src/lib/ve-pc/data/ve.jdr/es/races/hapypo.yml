@@ -1,0 +1,7 @@
+name: 'hapypo'
+localize: 'Hapypo'
+movement: 12
+talents:
+  1:
+    - acuatic_peace
+    - bulky_body

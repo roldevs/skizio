@@ -1,0 +1,7 @@
+name: 'kongo'
+localize: 'Kongo'
+movement: 12
+talents:
+  1:
+    - simian_skill
+    - fury

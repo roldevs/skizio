@@ -1,0 +1,77 @@
+name: 'fighter'
+localize: 'Guerrero'
+hit_dice: 8
+priorities:
+  attributes:
+    - key: strength
+      value: 1
+    - key: dexerety
+      value: 3
+    - key: constitution
+      value: 2
+    - key: inteligence
+      value: 4
+    - key: wisdom
+      value: 5
+    - key: charisma
+      value: 6
+  habilities:
+    - key: alertness
+      value: 2
+    - key: comunication
+      value: 5
+    - key: manipulation
+      value: 4
+    - key: lore
+      value: 6
+    - key: stealth
+      value: 3
+    - key: survival
+      value: 1
+talents:
+  1:
+    - fight_with_x
+    - multiple_strikes
+progress:
+  - atk: 1
+    mp: 0
+    ins: 0
+  - atk: 1
+    mp: 0
+    ins: 2
+  - atk: 1
+    mp: 0
+    ins: 3
+  - atk: 2
+    mp: 0
+    ins: 4
+  - atk: 2
+    mp: 0
+    ins: 5
+  - atk: 3
+    mp: 0
+    ins: 6
+  - atk: 4
+    mp: 0
+    ins: 7
+  - atk: 5
+    mp: 0
+    ins: 8
+  - atk: 6
+    mp: 0
+    ins: 9
+  - atk: 7
+    mp: 0
+    ins: 10
+  - atk: 7
+    mp: 0
+    ins: 11
+  - atk: 8
+    mp: 0
+    ins: 11
+  - atk: 9
+    mp: 0
+    ins: 11
+  - atk: 9
+    mp: 0
+    ins: 11

@@ -1,11 +1,13 @@
 // tslint:disable:no-unused-expression
+import Bluebird from 'bluebird';
 import { expect } from 'chai';
 import R from 'ramda';
+import { Attributes, IAttributesFactory } from '../../../src/lib/ve-pc/src/attributes';
 import { BonusTwo } from '../../../src/lib/ve-pc/src/bonus/two';
 import { Class, IClassFactory } from '../../../src/lib/ve-pc/src/class';
 import { Dice } from '../../../src/lib/ve-pc/src/dice';
 import { Gear, IGearFactory } from '../../../src/lib/ve-pc/src/gear';
-import { Items } from '../../../src/lib/ve-pc/src/items';
+import { Habilities, IHabilitiesFactory } from '../../../src/lib/ve-pc/src/habilities';
 import { ILoaderFactory, Loader } from '../../../src/lib/ve-pc/src/loader';
 import { IPCCreateConfig, PCCreate } from '../../../src/lib/ve-pc/src/pc/create';
 import { IRaceFactory, Race } from '../../../src/lib/ve-pc/src/race';
@@ -21,45 +23,15 @@ describe('PCCreate#get', () => {
   const movement: number = 12;
   const raceDef: IRaceDef = {
     name: raceName,
+    localize: raceName,
     movement,
-    priorities: {
-      attributes: [{
-        key: 'strength',
-        value: 1,
-      }, {
-        key: 'dexerety',
-        value: 2,
-      }, {
-        key: 'constitution',
-        value: 3,
-      }],
-      habilities: [{
-        key: 'alertness',
-        value: 4,
-      }, {
-        key: 'comunication',
-        value: 3,
-      }, {
-        key: 'manipulation',
-        value: 5,
-      }, {
-        key: 'lore',
-        value: 6,
-      }, {
-        key: 'stealth',
-        value: 1,
-      }, {
-        key: 'survival',
-        value: 2,
-      }],
+    talents: {
+      1: ['talent1', 'talent2'],
     },
-    talents: [
-      'talent1',
-      'talent2',
-    ],
   };
   const classDef: IClassDef = {
     name: className,
+    localize: className,
     hit_dice: 8,
     priorities: {
       attributes: [{
@@ -95,10 +67,9 @@ describe('PCCreate#get', () => {
         value: 3,
       }],
     },
-    talents: [
-      'talent3',
-      'talent2',
-    ],
+    talents: {
+      1: ['talent3', 'talent2'],
+    },
     progress: [{
       atk: 1,
       mp: 2,
@@ -110,17 +81,17 @@ describe('PCCreate#get', () => {
     'back2',
   ];
   const gearTestFile: () => IFileFactory = () => {
-    const listDir: (path: string) => string[] = () => [];
+    const listDir: (path: string) => Bluebird<string[]> = () => Bluebird.resolve([]);
     const loadYAML: (path: string) => any = () => [];
 
     return {
+      addRoot: () => '',
       listDir,
       loadYAML,
     };
   };
 
   const loader: ILoaderFactory = Loader({
-    root: './',
     file: gearTestFile(),
     locale: 'es',
     system: 've.jdr',
@@ -130,26 +101,32 @@ describe('PCCreate#get', () => {
   const race: IRaceFactory = Race(raceDef);
   const cl: IClassFactory = Class(classDef);
   const bonus: TBonus = BonusTwo;
+  const habilities: IHabilitiesFactory = Habilities({
+    class: cl,
+  });
+  const attributes: IAttributesFactory = Attributes({
+    class: cl,
+    bonus,
+    dice: Dice,
+  });
   const config: IPCCreateConfig = {
     startHabilityPoints,
+    habilities,
+    attributes,
     race,
     class: cl,
     dice: Dice,
     backgrounds,
     gear,
-    bonus,
   };
-  const attributes: string[] = R.map(R.prop('key'), Items({
-    itemsA: race.getAttributes(),
-    itemsB: cl.getAttributes(),
-  }).combinedSorted);
+  const classAttributes: string[] = R.map(R.prop('key'), cl.getAttributes());
   const result: IPC = PCCreate(config).generate();
 
   describe('attributes', () => {
     it('generate new PC', () => {
       R.forEach((attribute: string) => {
         expect(result.attributes[attribute]).to.be.a('number');
-      }, attributes);
+      }, classAttributes);
     });
   });
 
@@ -177,9 +154,13 @@ describe('PCCreate#get', () => {
   });
 
   describe('progress', () => {
-    it('get atk, mp and ins from level 1', () => {
+    it('get atk from level 1', () => {
       expect(result.atk).to.eql(1);
-      expect(result.mp).to.eql(2);
+    });
+    it('get mp from level 1', () => {
+      expect(result.mp).to.eql(result.mp! + result.attr_bonus.inteligence);
+    });
+    it('get ins from level 1', () => {
       expect(result.ins).to.eql(3);
     });
   });

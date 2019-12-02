@@ -1,12 +1,10 @@
-import { Canvas, loadImage } from 'canvas';
 import R from 'ramda';
-import { IHash } from '../typings/common';
 import { IPC } from '../typings/pc';
+import { ITalentLocaleInfo } from '../typings/talent';
 import { ILoaderFactory } from './loader';
 
 interface ILocalizeData {
-  races: IHash;
-  classes: IHash;
+  loader: ILoaderFactory;
 }
 
 interface ILocalizeConfig {
@@ -21,14 +19,14 @@ type TLocalize = (config: ILocalizeConfig) => ILocalizeFactory;
 
 const Localize: TLocalize =
   (config) => {
-    const localizeData: ILocalizeData = config.loader.getLocalizeData();
+    const talentsLocaleInfo: ITalentLocaleInfo = config.loader.getTalents();
 
     const getRace: (race: string) => string =
-      (race) => R.view(R.lensPath(['races', race]), localizeData);
+      (race) => config.loader.getRace(race).getLocalized();
     const getClass: (cls: string) => string =
-      (cls) => R.view(R.lensPath(['classes', cls]), localizeData);
+      (cls) => config.loader.getClass(cls).getLocalized();
     const getTalent: (talent: string) => string =
-      (talent) => R.view(R.lensPath(['talents', talent]), localizeData);
+      (talent) => R.view(R.lensPath([talent, 'title']), talentsLocaleInfo);
     const getTalents: (talents: string[]) => string[] =
       (talents) => [R.compose(R.join(', '), R.map(getTalent))(talents)];
 

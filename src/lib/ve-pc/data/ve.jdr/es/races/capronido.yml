@@ -1,0 +1,7 @@
+name: 'capronido'
+localize: 'Caprónido'
+movement: 12
+talents:
+  1:
+    - goat_nature
+    - assault

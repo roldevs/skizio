@@ -1,0 +1,7 @@
+name: 'manpache'
+localize: "Man'pache"
+movement: 12
+talents:
+  1:
+    - animal_cunning
+    - infravision

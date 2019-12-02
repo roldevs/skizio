@@ -1,0 +1,7 @@
+name: 'minotauro'
+localize: "Minotauro"
+movement: 12
+talents:
+  1:
+    - stubbornness
+    - assault

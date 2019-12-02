@@ -1,0 +1,7 @@
+name: 'salamandrino'
+localize: 'Salamandrino'
+movement: 9
+talents:
+  1:
+    - slippery_skin
+    - regeneration

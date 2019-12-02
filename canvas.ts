@@ -1,6 +1,6 @@
 import { Canvas } from 'canvas';
 import fs from 'fs';
-import { IVEPCFactory, VEPC } from './src/lib/ve-pc';
+import { IVEPCFactory, VEPC } from './src/lib/ve-pc/pc';
 
 const vepc: IVEPCFactory = VEPC({
   race: 'human',
@@ -9,6 +9,7 @@ const vepc: IVEPCFactory = VEPC({
   root: './src/lib/ve-pc/',
   threeBonus: false,
   system: 've.jdr',
+  level: 1,
 });
 
 vepc.fillCanvas().then((canvas: Canvas) => {

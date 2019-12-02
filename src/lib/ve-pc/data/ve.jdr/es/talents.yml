@@ -1,0 +1,159 @@
+adaptable:
+  title: Adaptable
+  description: De alguna forma tienes facilidad para adaptarte a cualquier ambiente y entorno. Ganas un modificador adicional de +1 a tu rasgo de Instintos.
+ambush:
+  title: Emboscar
+  description: Tienes ventaja en las pruebas de Subterfugio basadas en moverse en silencio y en ocultarse en las sombras. Añade 1d6 al daño cuando ataques a un blanco desprevenido.
+deadly_aim:
+  title: Certero
+  description: Tienes un bono adicional de +1 en todos los ataques de proyectiles.
+fight_with_x:
+  title: Lucha con X
+  description: 'Sustituye X por: arma de mano y escudo o dos armas de mano o armas a dos manos o armas de proyectiles. Peleando de esa forma ganas +1 al ataque y al daño.'
+gumption:
+  title: Ímpetu
+  description: Emprendedor Vives la vida con intensidad. Ganas un trasfondo adicional.
+infravision:
+  title: 'Infravisión'
+  description: Ves en la oscuridad hasta 20 metros. La visión se basa en el calor desprendido por los objetos.
+keen_sight:
+  title: Vista Aguda
+  description: Tienes ventaja en las pruebas de Alerta basadas en la vista.
+magical_ability:
+  title: 'Sensibilidad Mágica'
+  description: Puedes gastar puntos de poder (Pod) para realizar conjuros.
+multiple_strikes:
+  title: 'Ataques Múltiples'
+  description: Al abatir a un enemigo puedes realizar inmediatamente otro ataque. De esta forma puedes encadenar tantos ataques EXTRA como nivel tengas.
+nimble_fingers:
+  title: 'Dedos Ágiles'
+  description: Tienes ventaja en las pruebas de Manipulación que requieran precisión (por ejemplo abrir cerraduras o sustraer las posesiones de otra persona).
+sneaky:
+  title: Escurridizo
+  description: Tienes ventaja en las pruebas de Subterfugio relacionadas con moverse en silencio.
+stone_kinship:
+  title: 'Afín a la Piedra'
+  description: Tienes ventaja en cualquier prueba de Erudición relacionada con el trabajo sobre piedra. También puedes hacer una prueba de Alerta para detectar trampas hechas sobre roca.
+transfer_essence:
+  title: Transferir Esencia
+  description: Puedes convertir 3 puntos de vida en un punto de poder (Pod).
+channel_miracles:
+  title: Canalizar Milagros
+  description: Cada nivel (empezando por el primero) debes acordar con el DJ dos nuevos “milagros” que añadir a tu lista, de la misma forma que un hechicero da forma a sus conjuros. Puedes añadir más de una vez el mismo milagro, ya que solo puedes invocar cada milagro una vez al día. El poder de los milagros debe estar en consonancia con el nivel en el que se ganan, y debe ser aceptado por el DJ. Puedes utilizar la lista del apéndice 2 como guía para diseñar tus milagros.
+read_runes:
+  title: Leer Runas
+  description: Puedes invocar milagros inscritos en pergaminos siempre que tengas el nivel requerido por el pergamino.
+hand_imposition:
+  title: 'Imposición de manos'
+  description: Puedes sanar hasta 3D6 Puntos de vida al día a través de tus manos. Puedes repartir estos dados como desees (1D6 tres veces, 3D6 una sola vez o 2D6 y 1D6).
+read_languages:
+  title: Leer Lenguages
+  description: ''
+enchant_person:
+  title: Encantar Personas
+  description: ''
+transformation:
+  title: 'Transformación'
+  description: ''
+forest_ranger:
+  title: Guardabosques
+  description: ''
+evil_detection:
+  title: 'Detección del mal'
+  description: El DJ establece la definición exacta de “mal”, que puede ir desde solo detectar criaturas demoníacas o caóticas, hasta identificar a cualquier individuo que quiera dañarte.
+enemy_knowledge:
+  title: Conocimiento del Enemigo
+  description: Elige un tipo de enemigo contra el que te has especializado (orcos, goblins, kobolds, gigantes, etc.). Cuando atacas a una de esas criaturas obtienes ventaja.
+expert_guide:
+  title: 'Guía Experto'
+  description: Obtienes ventaja en las tiradas de Supervivencia relacionadas con seguir rastros, orientarte o conseguir suministros al aire libre.
+goat_nature:
+  title: 'Naturaleza Caprina'
+  description: Obtienes Ventaja en las pruebas de correr y saltar. Además, en casos de hambruna o inanición, eres capaz de alimentarte de casi cualquier cosa.
+assault:
+  title: Embestida
+  description: Sustituyes tu ataque con arma por un ataque con la cornamenta (1d6 de daño, 1d6+2 a la carga).
+control_living_dead:
+  title: Controlar muertos vivientes
+  description: "Cuando te topas con muertos vivientes sin amo, puedes llevar a cabo una prueba de Inteligencia. Si tienes éxito, asumirás el control de los mismos. Además, si gastas un punto de Poder (Pod), arrebatarás el control a su actual amo, en caso de que lo tengan. El número máximo de niveles totales que puedes mantener bajo tu control es igual a tu puntuación de Carisma (ej. un nigromante con CAR 12 puede controlar hasta doce esqueletos, o hasta seis necrófagos, o cualquier combinación de ambos tipos de criaturas mientras la suma de sus niveles no exceda de 12). Los muertos vivientes bajo tu control responden a tus órdenes verbales. En cualquier momento puedes liberarlos; en tal caso lanza 1d4: con un resultado de 1 te atacarán, con cualquier otro resultado en el dado actuarán siguiendo la última orden que les hayas dado."
+wake_up_dead:
+  title: Despertar a los muertos
+  description: "Si cuentas con la materia prima necesaria para trabajar (cadáveres), puedes gastar un punto de poder (Pod) y llevar a cabo una prueba de Inteligencia. Si tienes éxito, puedes crear muertos vivientes bajo tu control. El número máximo de niveles totales que puedes mantener bajo tu control es igual a tu puntuación de Carisma (ej. un nigromante con CAR 12 puede crear y controlar hasta doce esqueletos, o hasta seis necrófagos, o cualquier combinación de ambos tipos de criaturas, mientras la suma de sus niveles no exceda de 12). Es posible evitar el gasto del punto de Poder (Pod) necesario ejecutando este poder como un ritual mágico (una ceremonia de 1d6 horas de duración)."
+innate_healer:
+  title: Curandero Innato
+  description: Al aplicar vendas obtienes un +2 a la tirada de puntos de vida que recupera el paciente. También obtienes Ventaja en las tiradas de Erudición para reconocer y diagnosticar venenos y enfermedades.
+great_memory:
+  title: Gran memoria
+  description: Obtienes Ventaja en la pruebas de Erudición.
+acuatic_peace:
+  title: 'Paz acuática'
+  description: Una vez al día puedes recuperar 1d3 Puntos de vida sumergiéndote por completo en agua durante un turno (10 minutos).
+bulky_body:
+  title: Cuerpo voluminoso
+  description: Ganas 1 Punto de vida adicional por nivel.
+darkness_orientation:
+  title: Orientación en la oscuridad
+  description: Gracias a tu órgano vomeronasal eres capaz de moverte sin penalización en la oscuridad, aunque no puedes percibir los detalles de los objetos que te rodean.
+virulent_saliva:
+  title: Saliva virulenta
+  description: Quien entre en contacto con tu saliva (escupitajo o mordedura) debe superar una tirada de Instintos Constitución 12+ o quedar paralizado 1 asalto. En combate puedes sustituir tus ataques por arma por un escupitajo (ataque de proyectiles) o un mordisco (1d4 puntos de daño).
+simian_skill:
+  title: Destreza simiesca
+  description: Obtienes Ventaja en la pruebas de Fuerza y Destreza para trepar o desplazarte colgado de brazos y pies.
+fury:
+  title: Furia
+  description: Puedes abandonarte a un estado de furia asesina cuando te sientes amenazado tú mismo o tu grupo. Mientras haya enemigos a la vista ganas un +1 al ataque y al daño a cambio de sufrir un -2 a la Defensa.
+animal_cunning:
+  title: Astucia animal
+  description: Ganas Ventaja en las tiradas de Instintos relacionadas con la Destreza para evitar cualquier trampa.
+stubbornness:
+  title: Tozudez
+  description: Ganas Ventaja en todas aquellas pruebas de Fuerza que requieran insistencia o esfuerzo sostenido (como retirar escombros, sostener una viga, cavar o echar una puerta abajo).
+more_lifes_than_a_cat:
+  title: Más vidas que un gato
+  description: Ganas Ventaja en la tirada de Instintos para estabilizarte cuando caes incapacitado con menos de 0 Puntos de vida.
+feline_movement:
+  title: Movimiento felino
+  description: Ganas Ventaja en las tiradas de Subterfugio para ocultarse o moverse sigilosamente.
+acuatic:
+  title: Acuático
+  description: Eres capaz de moverte por terrenos pantanosos o de nadar a tu velocidad normal. Además, puedes contener la respiración el doble de tiempo que un humano normal.
+brave:
+  title: Valiente
+  description: Eres inmune al miedo.
+sepulchral_pairing:
+  title: Maridaje sepulcral
+  description: Habitualmente el humanoide aporta el cuerpo a la mezcla y el animal la cabeza, pero un jugador marchoso puede arriesgarse y lanzar una moneda (o 1d2) para determinar quién aportará qué. Lanza 1d4 para determinar el tipo de humanoide (elige un talento de dicha raza) y 1d8 para determinar el animal.
+unserious_cemetery:
+  title: 'No es serio este cementerio'
+  description: Por si tu aspecto de deshecho de matadero no fuese suficiente los poderosos hechizos de Morty te otorgan un ataque especial y una Ventaja puntual. Lanza 3d4 para determinarlos.
+slippery:
+  title: 'Escurridizo'
+  description: Obtienes Ventaja en las pruebas de Subterfugio relacionadas con moverse en silencio.
+portentous_resistance:
+  title: 'Resistencia portentosa'
+  description: Obtienes Ventaja en las pruebas de Instintos contra venenos y enfermedades.
+slippery_skin:
+  title: 'Piel resbaladiza'
+  description: Sin armadura o con armadura ligera ganas +1 a la Defensa y Ventaja en las pruebas de Instintos cuando intentan apresarte o agarrarte (Fuerza).
+regeneration:
+  title: 'Regeneración'
+  description: Puedes recuperar 1d4 Puntos de Vida tras un combate en el que no hayas resultado incapacitado ni muerto. Regeneras miembros paulatinamente.
+contorsionist:
+  title: 'Contorsionista'
+  description: Los teckelidos son conocidos por sus cuerpos alargados y esbeltos, capaces de atravesar cualquier túnel con gran facilidad. Puedes desplazarte tu movimiento normal en espacios angostos y reducidos.
+trickster_look:
+  title: 'Mirada embaucadora'
+  description: Tienes unos ojos lisonjeros que provocan fascinación en los humanos. Ganas Ventaja en las pruebas de Comunicación cuando hablas con humanos.
+telepathy:
+  title: Telepatía
+  description: Puedes comunicarte mentalmente con otros miembros de tu raza en un radio de 10 metros.
+fly:
+  title: 'Volar'
+  description: Puedes desplazarte volando a la misma velocidad que andando. No podrás usar este talento si estás sobrecargado o llevas armadura intermedia o pesada.
+acute_smell:
+  title: Olfato agudo
+  description: Ganas Ventaja en las pruebas de Alerta basadas en el olfato. Los Trikuanos pueden identificar criaturas a larga distancia por el olor, así como, detectar fuegos o zonas acuáticas.
+barbed_ball:
+  title: 'Bola de púas'
+  description: Tu enemigo obtiene DesVentaja al atacarte. Te enrollas formando una bola de púas que dificulta los ataques de tu agresor. No puedes realizar ataques mientras estés usando este talento.

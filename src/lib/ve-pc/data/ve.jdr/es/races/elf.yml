@@ -1,0 +1,7 @@
+name: 'elf'
+localize: 'Elfo'
+movement: 12
+talents:
+  1:
+    - keen_sight
+    - infravision

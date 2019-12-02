@@ -1,0 +1,7 @@
+name: 'halfling'
+localize: 'Mediano'
+movement: 9
+talents:
+  1:
+    - sneaky
+    - deadly_aim

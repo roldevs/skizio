@@ -1,0 +1,7 @@
+name: 'komodoro'
+localize: 'Komodoro'
+movement: 12
+talents:
+  1:
+    - darkness_orientation
+    - virulent_saliva

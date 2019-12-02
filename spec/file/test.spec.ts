@@ -7,10 +7,16 @@ describe('FileTest#getRaces', () => {
   const races: string[] = ['elve', 'dwarf', 'halfling'];
   const classes: string[] = ['fighter', 'magic-user', 'rogue'];
   const definition: IFileTestDefinition = { races, classes };
-  it('returns passed races', () => {
-    expect(FileTest(definition).listDir('races')).to.eql(races);
+  it('returns passed races', (done: any) => {
+    FileTest(definition).listDir('races').then((racesRet: string[]) => {
+      expect(racesRet).to.eql(races);
+      done();
+    });
   });
-  it('returns passed classes', () => {
-    expect(FileTest(definition).listDir('classes')).to.eql(classes);
+  it('returns passed classes', (done: any) => {
+    FileTest(definition).listDir('classes').then((classesRet: string[]) => {
+      expect(classes).to.eql(classesRet);
+      done();
+    });
   });
 });

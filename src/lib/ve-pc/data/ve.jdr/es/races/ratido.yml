@@ -1,0 +1,7 @@
+name: 'ratido'
+localize: "Rátido"
+movement: 12
+talents:
+  1:
+    - slippery
+    - portentous_resistance

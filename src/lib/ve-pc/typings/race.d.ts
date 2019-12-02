@@ -1,13 +1,11 @@
 import { IItem } from "./common";
+import { ITalentDef } from "./talent";
 
 interface IRaceDef {
   name: string;
+  localize: string;
   movement: number;
-  priorities:{
-    attributes: IItem[];
-    habilities: IItem[];
-  };
-  talents: string[];
+  talents: ITalentDef;
 }
 
 export {

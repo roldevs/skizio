@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import {h} from 'snabbdom';
 import {VNode} from 'snabbdom/vnode';
+import { IVEEnvClassInfo, IVEEnvRaceInfo } from '../../../../../lib/ve-pc/env';
 import { dropdown, IDropdownItem } from '../../../../ui/dropdown';
 import { IVEFormModel, IVEFormModelFactory } from './model';
 
@@ -10,24 +11,10 @@ const texts: any = {
     select_race: 'Choose a Race',
     class: 'Class',
     select_class: 'Choose a Class',
-    label_bonus: 'Bonus',
     select_bonus: 'Choose Bonus range',
-    races: {
-      elf: 'Elf',
-      dwarf: 'Dwarf',
-      halfling: 'Halfling',
-      human: 'Human',
-    },
-    classes: {
-      'fighter': 'Fighter',
-      'magic-user': 'Magic User',
-      'rogue': 'Rogue',
-      'cleric': 'Cleric',
-      'paladin': 'Paladin',
-      'explorer': 'Explorer',
-      'bard': 'Bard',
-      'multiform': 'Multiform',
-    },
+    label_bonus: 'Bonus',
+    select_level: 'Choose a level',
+    label_level: 'Level',
     create_btn_label: 'Create character sheet for Vieja Escuela',
     bonus: {
       two: '-2/+2 Bonus',
@@ -41,22 +28,8 @@ const texts: any = {
     select_class: 'Seleccione una Clase',
     label_bonus: 'Bonus',
     select_bonus: 'Seleccione un rango de Bonus',
-    races: {
-      elf: 'Elfo',
-      dwarf: 'Enano',
-      halfling: 'Mediano',
-      human: 'Humano',
-    },
-    classes: {
-      'fighter': 'Guerrero',
-      'magic-user': 'Hechicero',
-      'rogue': 'Bribón',
-      'cleric': 'Clérigo',
-      'paladin': 'Paladín',
-      'explorer': 'Explorador',
-      'bard': 'Bardo',
-      'multiform': 'Multiforme',
-    },
+    select_level: 'Seleccione un nivel',
+    label_level: 'Nivel',
     create_btn_label: 'Crear hoja de personaje para Vieja Escuela',
     bonus: {
       two: '-2/+2 Bonus',
@@ -65,56 +38,53 @@ const texts: any = {
   },
 };
 
-const raceItems: (locale: string) => IDropdownItem[] =
-  (locale: string) => {
-    const getItem: (cls: string) => IDropdownItem =
-      (cls) => {
-        return {
-          id: cls,
-          text: texts[locale].races[cls],
-          value: cls,
-        };
-      };
-    return R.map(
-      getItem,
-      ['elf', 'dwarf', 'halfling', 'human'],
-    );
+const getItem: (item: IVEEnvClassInfo | IVEEnvRaceInfo) => IDropdownItem =
+  (item) => {
+    return {
+      text: item.localize,
+      value: item.name,
+    };
   };
 
-const classItems: (locale: string) => IDropdownItem[] =
-  (locale) => {
-    const getItem: (cls: string) => IDropdownItem =
-      (cls) => {
-        return {
-          id: cls,
-          text: texts[locale].classes[cls],
-          value: cls,
-        };
+const raceItems: (model: IVEFormModelFactory) => IDropdownItem[] =
+  (model) => R.map(getItem, model.stream$().races);
+
+const classItems: (model: IVEFormModelFactory) => IDropdownItem[] =
+  (model) => R.map(getItem, model.stream$().classes);
+
+const levelItems: (locale: string) => IDropdownItem[] =
+  () => {
+    return R.map((level: number) => {
+      level += 1;
+      return {
+        text: level.toString(),
+        value: level.toString(),
       };
-    return R.map(
-      getItem,
-      ['fighter', 'magic-user', 'rogue', 'cleric', 'paladin', 'explorer', 'bard', 'multiform'],
-    );
+    }, R.times(R.identity, 30));
   };
 
 const typeBonusItems: (locale: string) => IDropdownItem[] =
   (locale) => {
     return [{
-      id: 'twoBonus',
       text: texts[locale].bonus.two,
       value: 'twoBonus',
     }, {
-      id: 'threeBonus',
       text: texts[locale].bonus.three,
       value: 'threeBonus',
     }];
   };
 
-const getSelectedRace: (race: string, locale: string) => IDropdownItem | undefined =
-  (race, locale) => R.find(R.propEq('value', race), raceItems(locale));
+const getSelectedRace: (model: IVEFormModelFactory) => IDropdownItem | undefined =
+  (model) => {
+    const state: IVEFormModel = model.stream$();
+    return R.find(R.propEq('value', state.race), raceItems(model));
+  };
 
-const getSelectedClass: (cls: string, locale: string) => IDropdownItem | undefined =
-  (cls, locale) => R.find(R.propEq('value', cls), classItems(locale));
+const getSelectedClass: (model: IVEFormModelFactory) => IDropdownItem | undefined =
+  (model) => {
+    const state: IVEFormModel = model.stream$();
+    return R.find(R.propEq('value', state.class), classItems(model));
+  };
 
 const getRaceText: (model: IVEFormModelFactory) => string | null =
   (model) => {
@@ -123,7 +93,7 @@ const getRaceText: (model: IVEFormModelFactory) => string | null =
     if (!race) {
       return null;
     }
-    const selectedRace: IDropdownItem | undefined = getSelectedRace(race, state.locale);
+    const selectedRace: IDropdownItem | undefined = getSelectedRace(model);
     if (!selectedRace) {
       return null;
     }
@@ -146,7 +116,7 @@ const getClassText: (model: IVEFormModelFactory) => string | null =
     if (!cls) {
       return null;
     }
-    const selectedClass: IDropdownItem | undefined = getSelectedClass(cls, state.locale);
+    const selectedClass: IDropdownItem | undefined = getSelectedClass(model);
     if (!selectedClass) {
       return null;
     }
@@ -160,7 +130,7 @@ const dropdownRaces: (model: IVEFormModelFactory) => VNode =
     value: getRaceText(model),
     name: 'race',
     disabled: false,
-    options: raceItems(model.stream$().locale),
+    options: raceItems(model),
     callback: model.setRace,
   }).render();
 
@@ -171,7 +141,7 @@ const dropdownClasses: (model: IVEFormModelFactory) => VNode =
     value: getClassText(model),
     name: 'class',
     disabled: false,
-    options: classItems(model.stream$().locale),
+    options: classItems(model),
     callback: model.setClass,
   }).render();
 
@@ -184,6 +154,17 @@ const dropdownBonus: (model: IVEFormModelFactory) => VNode =
     disabled: false,
     options: typeBonusItems(model.stream$().locale),
     callback: model.setBonus,
+  }).render();
+
+const dropdownLevel: (model: IVEFormModelFactory) => VNode =
+  (model) => dropdown({
+    id: 'level_dropdown',
+    placeholder: texts[model.stream$().locale].select_level,
+    value: model.stream$().level.toString(),
+    name: 'level',
+    disabled: false,
+    options: levelItems(model.stream$().locale),
+    callback: model.setLevel,
   }).render();
 
 const createBtn: (model: IVEFormModelFactory) => VNode =
@@ -209,44 +190,70 @@ const viewFn: (model: IVEFormModelFactory) => VNode =
     return h('div', {
       class: {
         ui: true,
-        items: true,
+        segment: true,
       },
     }, [
       h('div', {
         class: {
-          item: true,
+          ui: true,
+          active: state.loading,
+          inverted: true,
+          dimmer: true,
         },
       }, [
         h('div', {
           class: {
-            image: true,
+            ui: true,
+            loader: true,
           },
-        }, [
-          h('img', {
-            attrs: {
-              src: '/images/ve.jdr.png',
-            },
-          }),
-        ]),
+        }),
+      ]),
+      h('div', {
+        class: {
+          ui: true,
+          items: true,
+        },
+      }, [
         h('div', {
           class: {
-            content: true,
+            item: true,
           },
         }, [
-          h('div', { attrs: { id: 'body' }, class: { ui: true, form: true } }, [
-            h('div', { class: { inline: true, field: true } }, [
-              h('label', texts[state.locale].race),
-              dropdownRaces(model),
+          h('div', {
+            class: {
+              image: true,
+            },
+          }, [
+            h('img', {
+              attrs: {
+                src: '/images/ve.jdr.png',
+              },
+            }),
+          ]),
+          h('div', {
+            class: {
+              content: true,
+            },
+          }, [
+            h('div', { attrs: { id: 'body' }, class: { ui: true, form: true } }, [
+              h('div', { class: { inline: true, field: true } }, [
+                h('label', texts[state.locale].race),
+                dropdownRaces(model),
+              ]),
+              h('div', { class: { inline: true, field: true } }, [
+                h('label', texts[state.locale].class),
+                dropdownClasses(model),
+              ]),
+              h('div', { class: { inline: true, field: true } }, [
+                h('label', texts[state.locale].label_bonus),
+                dropdownBonus(model),
+              ]),
+              h('div', { class: { inline: true, field: true } }, [
+                h('label', texts[state.locale].label_level),
+                dropdownLevel(model),
+              ]),
+              createBtn(model),
             ]),
-            h('div', { class: { inline: true, field: true } }, [
-              h('label', texts[state.locale].class),
-              dropdownClasses(model),
-            ]),
-            h('div', { class: { inline: true, field: true } }, [
-              h('label', texts[state.locale].label_bonus),
-              dropdownBonus(model),
-            ]),
-            createBtn(model),
           ]),
         ]),
       ]),

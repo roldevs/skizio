@@ -1,5 +1,6 @@
 import R from 'ramda';
 import { IFileFactory } from '../typings/file';
+import { ITalentLocaleInfo } from '../typings/talent';
 import { ICanvasElement } from './canvas/sheet';
 import { Class, IClassFactory } from './class';
 import { IArm, IArmor } from './gear';
@@ -7,15 +8,12 @@ import { ILocalizeData } from './localize';
 import { IRaceFactory, Race } from './race';
 
 interface ILoaderConfig {
-  root: string;
   file: IFileFactory;
   locale: string;
   system: string;
 }
 
 interface ILoaderFactory {
-  getRaces: () => string[];
-  getClasses: () => string[];
   getRace: (race: string) => IRaceFactory;
   getClass: (className: string) => IClassFactory;
   getBackgrounds: () => string[];
@@ -25,19 +23,20 @@ interface ILoaderFactory {
   getStrengthArms: () => IArm[];
   getDexeretyArms: () => IArm[];
   getArmors: () => IArmor[];
+  getTalents: () => ITalentLocaleInfo;
 }
 
 type TLoader = (config: ILoaderConfig) => ILoaderFactory;
 
 const Loader: TLoader = (config) => {
-  const dataBaseDir: string = `${config.root}data/${config.system}/`;
+  const dataBaseDir: string = `data/${config.system}/${config.locale}/`;
 
   const baseRaceDir: string = `${dataBaseDir}races/`;
   const baseClassDir: string = `${dataBaseDir}classes/`;
-  const baseGearDir: string = `${dataBaseDir}locales/${config.locale}/gear/`;
+  const baseGearDir: string = `${dataBaseDir}gear/`;
 
   const localizePath: () => string =
-    () => `${dataBaseDir}locales/${config.locale}/localize.yml`;
+    () => `${dataBaseDir}localize.yml`;
 
   const classPath: (className: string) => string =
     (className) => `${baseClassDir}${className}.yml`;
@@ -46,13 +45,13 @@ const Loader: TLoader = (config) => {
     (race) => `${baseRaceDir}${race}.yml`;
 
   const canvasSheetDataPath: () => string =
-    () => `${dataBaseDir}locales/${config.locale}/canvas_sheet.yml`;
+    () => `${dataBaseDir}canvas_sheet.yml`;
 
   const getCanvasSheetImagePath: () => string =
-    () => `${dataBaseDir}locales/${config.locale}/sheet.png`;
+    () => config.file.addRoot(`${dataBaseDir}sheet.png`);
 
   const backgroundPath: string =
-    `${dataBaseDir}locales/${config.locale}/backgrounds.yml`;
+    `${dataBaseDir}backgrounds.yml`;
 
   const getStrengthArmPath: () => string =
     () => `${baseGearDir}strength.yml`;
@@ -63,14 +62,8 @@ const Loader: TLoader = (config) => {
   const getArmorsPath: () => string =
     () => `${baseGearDir}armors.yml`;
 
-  const removeExtension: (filename: string) => string =
-    (filename) => filename.split('.').slice(0, -1).join('.');
-
-  const getRaces: () => string[] =
-    () => R.map(removeExtension, config.file.listDir(baseRaceDir));
-
-  const getClasses: () => string[] =
-    () => R.map(removeExtension, config.file.listDir(baseClassDir));
+  const getTalentsPath: () => string =
+    () => `${dataBaseDir}talents.yml`;
 
   const getRace: (race: string) => IRaceFactory =
     R.compose(Race, config.file.loadYAML, racePath);
@@ -96,9 +89,10 @@ const Loader: TLoader = (config) => {
   const getArmors: () => IArmor[] =
     R.compose(config.file.loadYAML, getArmorsPath);
 
+  const getTalents: () => ITalentLocaleInfo =
+    R.compose(config.file.loadYAML, getTalentsPath);
+
   return {
-    getRaces,
-    getClasses,
     getRace,
     getClass,
     getBackgrounds,
@@ -108,6 +102,7 @@ const Loader: TLoader = (config) => {
     getStrengthArms,
     getDexeretyArms,
     getArmors,
+    getTalents,
   };
 };
 

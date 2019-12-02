@@ -1,0 +1,57 @@
+- name: Hacha de Batalla
+  damage: 1d8
+  cost: 5
+  except:
+    - magic-user
+    - necromancer
+- name: Porra
+  damage: 1d4
+  cost: 0
+- name: Daga
+  damage: 1d4
+  cost: 2
+- name: Martillo de Guerra
+  damage: 1d4+1
+  cost: 1
+  except:
+    - magic-user
+    - necromancer
+- name: Maza Pesada
+  damage: 1d8
+  cost: 1
+  except:
+    - magic-user
+    - necromancer
+- name: Lanza
+  damage: 1d6
+  cost: 1
+  except:
+    - magic-user
+    - necromancer
+- name: Bastón
+  damage: 1d6
+  cost: 0
+- name: Espada Larga o Ancha
+  damage: 1d8
+  cost: 15
+  except:
+    - magic-user
+    - necromancer
+- name: Espada corta
+  damage: 1d6
+  cost: 8
+  except:
+    - magic-user
+    - necromancer
+- name: Espada a dos manos
+  damage: 1d10
+  cost: 30
+  except:
+    - magic-user
+    - necromancer
+- name: Gran Hacha
+  damage: 1d8+1
+  cost: 22
+  except:
+    - magic-user
+    - necromancer

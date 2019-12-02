@@ -1,0 +1,77 @@
+name: 'magic-user'
+localize: 'Hechicero'
+hit_dice: 4
+priorities:
+  attributes:
+    - key: strength
+      value: 6
+    - key: dexerety
+      value: 4
+    - key: constitution
+      value: 5
+    - key: inteligence
+      value: 2
+    - key: wisdom
+      value: 1
+    - key: charisma
+      value: 3
+  habilities:
+    - key: alertness
+      value: 4
+    - key: comunication
+      value: 2
+    - key: manipulation
+      value: 3
+    - key: lore
+      value: 1
+    - key: stealth
+      value: 6
+    - key: survival
+      value: 5
+talents:
+  1:
+    - magical_ability
+    - transfer_essence
+progress:
+  - atk: 0
+    mp: 1
+    ins: 0
+  - atk: 0
+    mp: 2
+    ins: 1
+  - atk: 0
+    mp: 4
+    ins: 2
+  - atk: 1
+    mp: 5
+    ins: 3
+  - atk: 1
+    mp: 7
+    ins: 4
+  - atk: 2
+    mp: 8
+    ins: 5
+  - atk: 2
+    mp: 10
+    ins: 6
+  - atk: 3
+    mp: 12
+    ins: 7
+  - atk: 3
+    mp: 14
+    ins: 8
+  - atk: 3
+    mp: 15
+    ins: 9
+  - atk: 4
+    mp: 17
+    ins: 10
+  - atk: 4
+    mp: 19
+    ins: 10
+  - atk: 4
+    mp: 20
+    ins: 10
+  - atk: 5
+    mp: 22
+    ins: 10

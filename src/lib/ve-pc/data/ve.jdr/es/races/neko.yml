@@ -1,0 +1,7 @@
+name: 'neko'
+localize: "Neko"
+movement: 12
+talents:
+  1:
+    - more_lifes_than_a_cat
+    - feline_movement

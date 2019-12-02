@@ -1,0 +1,7 @@
+name: 'tengu'
+localize: 'Tengu'
+movement: 12
+talents:
+  1:
+    - telepathy
+    - fly

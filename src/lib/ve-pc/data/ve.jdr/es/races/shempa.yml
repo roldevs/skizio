@@ -1,0 +1,7 @@
+name: 'shempa'
+localize: 'Shempa'
+movement: 12
+talents:
+  1:
+    - simian_skill
+    - animal_cunning

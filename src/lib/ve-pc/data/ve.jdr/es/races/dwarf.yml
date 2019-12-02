@@ -1,0 +1,7 @@
+name: 'dwarf'
+localize: Enano
+movement: 9
+talents:
+  1:
+    - stone_kinship
+    - infravision

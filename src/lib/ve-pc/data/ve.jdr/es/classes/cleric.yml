@@ -1,0 +1,77 @@
+name: 'cleric'
+localize: 'Clérigo'
+hit_dice: 6
+priorities:
+  attributes:
+    - key: strength
+      value: 5
+    - key: dexerety
+      value: 2
+    - key: constitution
+      value: 6
+    - key: inteligence
+      value: 1
+    - key: wisdom
+      value: 3
+    - key: charisma
+      value: 4
+  habilities:
+    - key: alertness
+      value: 3
+    - key: comunication
+      value: 6
+    - key: manipulation
+      value: 4
+    - key: lore
+      value: 5
+    - key: stealth
+      value: 1
+    - key: survival
+      value: 2
+talents:
+  1:
+    - channel_miracles
+    - read_runes
+progress:
+  - atk: 0
+    mp: 0
+    ins: 0
+  - atk: 0
+    mp: 0
+    ins: 1
+  - atk: 1
+    mp: 0
+    ins: 2
+  - atk: 1
+    mp: 0
+    ins: 3
+  - atk: 2
+    mp: 0
+    ins: 4
+  - atk: 2
+    mp: 0
+    ins: 5
+  - atk: 3
+    mp: 0
+    ins: 6
+  - atk: 3
+    mp: 0
+    ins: 7
+  - atk: 4
+    mp: 0
+    ins: 8
+  - atk: 5
+    mp: 0
+    ins: 9
+  - atk: 5
+    mp: 0
+    ins: 10
+  - atk: 6
+    mp: 0
+    ins: 11
+  - atk: 7
+    mp: 0
+    ins: 11
+  - atk: 7
+    mp: 0
+    ins: 11

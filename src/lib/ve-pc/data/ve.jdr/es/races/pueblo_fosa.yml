@@ -1,0 +1,7 @@
+name: 'pueblo_fosa'
+localize: "Pueblo de la Fosa"
+movement: 8
+talents:
+  1:
+    - sepulchral_pairing
+    - unserious_cemetery

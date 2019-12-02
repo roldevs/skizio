@@ -1,30 +1,27 @@
 import R from 'ramda';
-import {
-  IItem,
-} from '../typings/common';
 import { IRaceDef } from '../typings/race';
+import { ITalentDef } from '../typings/talent';
+import { Talent } from './talent';
 
 interface IRaceFactory {
   getName: () => string;
-  getAttributes: () => IItem[];
-  getHabilites: () => IItem[];
-  getTalents: () => string[];
+  getLocalized: () => string;
+  getTalents: (level: number) => string[];
   getMovement: () => number;
 }
 
 type TRace = (definition: IRaceDef) => IRaceFactory;
 
 const Race: TRace = (definition) => {
+  const talents: ITalentDef = R.prop('talents', definition);
   const getName: () => string = () => definition.name;
-  const getAttributes: () => IItem[] = () => R.view(R.lensPath(['priorities', 'attributes']), definition);
-  const getHabilites: () => IItem[] = () => R.view(R.lensPath(['priorities', 'habilities']), definition);
-  const getTalents: () => string[] = () => R.prop('talents', definition);
+  const getLocalized: () => string = () => definition.localize;
+  const getTalents: (level: number) => string[] = Talent({ talents }).get;
   const getMovement: () => number = () => R.prop('movement', definition);
 
   return {
     getName,
-    getAttributes,
-    getHabilites,
+    getLocalized,
     getTalents,
     getMovement,
   };

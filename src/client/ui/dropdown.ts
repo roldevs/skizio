@@ -3,7 +3,6 @@ import {h} from 'snabbdom';
 import {VNode} from 'snabbdom/vnode';
 
 interface IDropdownItem {
-  id: string;
   text: string;
   value: any;
 }
@@ -47,7 +46,7 @@ const items: (
         item: true,
       },
       attrs: {
-        'data-value': option.id,
+        'data-value': option.value,
       },
     }, [
       option.text,

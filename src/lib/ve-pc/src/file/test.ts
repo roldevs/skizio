@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import R from 'ramda';
 import { IClassDef } from '../../typings/class';
 import { IFileFactory } from '../../typings/file';
@@ -13,15 +14,15 @@ interface IFileTestDefinition {
 type TFileTest = (definition: IFileTestDefinition) => IFileFactory;
 
 const FileTest: TFileTest = (definition) => {
-  const listDir: (path: string) => string[] =
+  const listDir: (path: string) => Bluebird<string[]> =
     (path) => {
       if (path.includes('races')) {
-        return definition.races!;
+        return Bluebird.resolve(definition.races!);
       }
       if (path.includes('classes')) {
-        return definition.classes!;
+        return Bluebird.resolve(definition.classes!);
       }
-      return [];
+      return Bluebird.resolve([]);
     };
 
   const loadYAML: (path: string) => any = (path) => {
@@ -35,6 +36,7 @@ const FileTest: TFileTest = (definition) => {
   };
 
   return {
+    addRoot: () => '',
     listDir,
     loadYAML,
   };

@@ -11,6 +11,8 @@ const veApiController = VeApiController();
 // const categoriesController = categoriesApiController();
 
 router.route('/ve/pc/:locale/:system/:level/:race/:class/sheet.png').get(veApiController.sheet);
+router.route('/ve/pc/:locale/:system/races.json').get(veApiController.races);
+router.route('/ve/pc/:locale/:system/classes.json').get(veApiController.classes);
 // router.route('/types/:locale.json').get(foldersApiController(nsFolder()).index);
 // router.route('/types/:locale/:ns.json').get(foldersApiController(typeFolder()).index);
 // router.route('/random/:locale/:ns/:type.json').get(randomController.index);

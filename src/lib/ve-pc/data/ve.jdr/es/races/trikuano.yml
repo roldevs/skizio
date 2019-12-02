@@ -1,0 +1,7 @@
+name: 'trikuano'
+localize: 'Trikuano'
+movement: 9
+talents:
+  1:
+    - acute_smell
+    - barbed_ball

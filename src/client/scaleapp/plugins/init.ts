@@ -3,6 +3,7 @@ import hasherPlugin from './hasher';
 import localePlugin from './locale';
 import lsPlugin from './ls';
 import scaleAppPlugin from './scaleapp';
+import servicesPlugin from './services';
 
 export default (core: scaleapp.Core) => {
   // core.use(scaleApp.plugins.ls);
@@ -10,4 +11,5 @@ export default (core: scaleapp.Core) => {
   core.use(scaleAppPlugin);
   core.use(localePlugin);
   core.use(hasherPlugin);
+  core.use(servicesPlugin);
 };

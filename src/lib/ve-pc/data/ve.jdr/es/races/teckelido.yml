@@ -1,0 +1,7 @@
+name: 'teckelido'
+localize: 'Teckélido'
+movement: 12
+talents:
+  1:
+    - contorsionist
+    - trickster_look

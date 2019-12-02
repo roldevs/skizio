@@ -1,0 +1,7 @@
+name: 'human'
+localize: 'Human'
+movement: 12
+talents:
+  1:
+    - gumption
+    - adaptable

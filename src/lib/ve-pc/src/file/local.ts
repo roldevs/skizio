@@ -1,17 +1,30 @@
+import Bluebird from 'bluebird';
 import fs from 'fs';
 import YAML from 'yaml';
-import { IFileFactory } from '../../typings/file';
+import { TFileLocal } from '../../typings/file';
 
-type TFileLocal = () => IFileFactory;
+const FileLocal: TFileLocal = (config) => {
+  const addRoot: (path: string) => string = (path) => `${config.root}${path}`;
 
-const FileLocal: TFileLocal = () => {
-  const listDir: (path: string) => string[] =
-    (path) => fs.readdirSync(path);
+  const listDir: (dir: string) => Bluebird<string[]> =
+    (dir) => {
+      return new Bluebird((resolve, reject) => {
+        fs.readdir(addRoot(dir), (err, files) => {
+          if (err) {
+            // tslint:disable-next-line:no-debugger
+            debugger;
+            reject(err);
+          }
+          resolve(files);
+        });
+      });
+    };
 
   const loadYAML: (path: string) => any =
-    (path) => YAML.parse(fs.readFileSync(path, 'utf8'));
+    (path) => YAML.parse(fs.readFileSync(addRoot(path), 'utf8'));
 
   return {
+    addRoot,
     listDir,
     loadYAML,
   };

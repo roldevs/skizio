@@ -62,7 +62,7 @@
   },
   "include": [
     "src/typyngs/**/*.d.ts",
-    "**/*.ts", "spec/loader/.spec.ts"
+    "**/*.ts", "spec/loader/.spec.ts", "../index.ts", "../../../spec/testData.ts"
   ],
   "exclude": [
     "node_modules"

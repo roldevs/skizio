@@ -1,0 +1,54 @@
+- name: Cuero blando
+  defence: 1
+  cost: 5
+  except:
+    - magic-user
+    - necromancer
+- name: Cuero
+  defence: 2
+  cost: 15
+  except:
+    - magic-user
+    - necromancer
+- name: Anillas
+  defence: 3
+  cost: 30
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Cota de Mallas
+  defence: 4
+  cost: 75
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Placas
+  defence: 6
+  cost: 100
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Completa
+  defence: 7
+  cost: 300
+  except:
+    - magic-user
+    - rogue
+    - multiform
+    - explorer
+    - necromancer
+- name: Escudo
+  defence: 1
+  cost: 15
+  except:
+    - magic-user
+    - necromancer
