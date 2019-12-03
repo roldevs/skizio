@@ -38,19 +38,32 @@ const texts: any = {
   },
 };
 
-const getItem: (item: IVEEnvClassInfo | IVEEnvRaceInfo) => IDropdownItem =
-  (item) => {
+const boldClass: (className: string) => boolean =
+  (className) => R.includes(
+    className,
+    ['cleric', 'explorer', 'fighter', 'magic-user', 'paladin', 'rogue'],
+  );
+
+const boldRace: (race: string) => boolean =
+  (raceName) => R.includes(
+    raceName,
+    ['dwarf', 'elf', 'halfling', 'human'],
+  );
+
+const getItem: (boldFn: (name: string) => boolean) => (item: IVEEnvClassInfo | IVEEnvRaceInfo) => IDropdownItem =
+  (boldFn) => (item) => {
     return {
       text: item.localize,
       value: item.name,
+      bold: boldFn(item.name),
     };
   };
 
 const raceItems: (model: IVEFormModelFactory) => IDropdownItem[] =
-  (model) => R.map(getItem, model.stream$().races);
+  (model) => R.map(getItem(boldRace), model.stream$().races);
 
 const classItems: (model: IVEFormModelFactory) => IDropdownItem[] =
-  (model) => R.map(getItem, model.stream$().classes);
+  (model) => R.map(getItem(boldClass), model.stream$().classes);
 
 const levelItems: (locale: string) => IDropdownItem[] =
   () => {
@@ -60,7 +73,7 @@ const levelItems: (locale: string) => IDropdownItem[] =
         text: level.toString(),
         value: level.toString(),
       };
-    }, R.times(R.identity, 30));
+    }, R.times(R.identity, 14));
   };
 
 const typeBonusItems: (locale: string) => IDropdownItem[] =

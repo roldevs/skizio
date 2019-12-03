@@ -5,6 +5,7 @@ import {VNode} from 'snabbdom/vnode';
 interface IDropdownItem {
   text: string;
   value: any;
+  bold?: boolean;
 }
 
 interface IDropdownConfig {
@@ -34,13 +35,21 @@ const doEvent: (config: IDropdownConfig) => (value: any, text: any, $selectedIte
   }
 };
 
+const textNode: (item: IDropdownItem) => VNode | string =
+  (item) => {
+    if (item.bold) {
+      return h('b', item.text);
+    }
+    return item.text;
+  };
+
 const items: (
   config: {
     options: IDropdownItem[],
   },
 ) => VNode[] =
 (config) => {
-  return R.map(function(option: IDropdownItem) {
+  return R.map((option: IDropdownItem) => {
     return h('div', {
       class: {
         item: true,
@@ -49,7 +58,7 @@ const items: (
         'data-value': option.value,
       },
     }, [
-      option.text,
+      textNode(option),
     ]);
   }, config.options);
 };

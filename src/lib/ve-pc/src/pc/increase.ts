@@ -1,4 +1,5 @@
 import R from 'ramda';
+import { IClassProgressItem } from '../../typings/class';
 import { IHash } from '../../typings/common';
 import { IPC } from '../../typings/pc';
 import { IClassFactory } from '../class';
@@ -29,8 +30,18 @@ const PCIncrease: (config: IPCIncreaseConfig) => IPCIncreaseFactory =
     const increaseTalents: (pc: IPC) => IPC =
       (pc) => R.set(R.lensProp('talents'), combineTalents(pc.level), pc);
 
-    const increaseProgress: (pc: IPC) => IPC =
-      (pc) => R.set(R.lensProp('progress'), config.progress.get(pc.level), pc);
+    const getIncreasedProgress: (pc: IPC) => IClassProgressItem =
+      (pc) => {
+        const progress: IClassProgressItem = config.progress.get(pc.level + 1)!;
+        const magicPower: number = (progress ? progress.mp : 0) + pc.attr_bonus.inteligence;
+        return {
+          atk: progress.atk,
+          mp: magicPower,
+          ins: progress.ins,
+        };
+      };
+
+    const increaseProgress: (pc: IPC) => IPC = (pc) => R.merge(pc, getIncreasedProgress(pc));
 
     const increaseHitPoints: (pc: IPC) => IPC =
       (pc) => R.set(

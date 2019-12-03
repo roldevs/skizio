@@ -1,4 +1,5 @@
 import { IArm, IArmor } from "../src/gear";
+import { IClassProgressItem } from "./class";
 
 interface IPC {
   race: string;

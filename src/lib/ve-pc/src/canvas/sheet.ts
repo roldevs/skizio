@@ -100,16 +100,29 @@ const CanvasSheet: TCanvasSheet =
           }, R.view(R.lensPath(element.lense), pcObject));
       };
 
+    const printRaceElements: (pcObject: IPC, element: ICanvasElement) => void =
+      (pcObject, element) => {
+        const fontFamily: string = 'Arial';
+        const text: string = getText(pcObject, element);
+        if (text.length > 10) {
+          context.font = `40px ${fontFamily}`;
+        }
+        context.fillText(text, element.posx, element.posy);
+      };
+
     // TODO: Apply SOLID principles
     const printValue: (pcObject: IPC, element: ICanvasElement) => void =
       (pcObject, element) => {
-        const fontFamily: string = 'Bonbon';
+        const fontFamily: string = 'Arial';
         context.font = `${element.size} ${fontFamily}`;
         if (R.contains('arms', element.lense)) {
           return printArmElements(pcObject, element);
         }
         if (R.contains('armors', element.lense)) {
           return printArmorElements(pcObject, element);
+        }
+        if (R.contains('race', element.lense)) {
+          return printRaceElements(pcObject, element);
         }
         if (element.maxWidth) {
           return printWrappedElement(getText(pcObject, element).toString(), element);

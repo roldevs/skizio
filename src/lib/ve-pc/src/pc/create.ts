@@ -68,7 +68,7 @@ const PCCreate: (config: IPCCreateConfig) => IPCCreateFactory =
       const attributes: IHash = config.attributes.initial();
       const attrBonus: IHash = config.attributes.getBonus(attributes);
       const habilities: IHash = config.habilities.initial(config.startHabilityPoints);
-      const progress: IClassProgressItem | undefined = getProgress(level);
+      const progress: IClassProgressItem = getProgress(level)!;
       const hitPoints: number = getHitPoints(level, attrBonus.constitution);
       const money: number = getMoney();
       const arms: IArm[] = getArms(money);
@@ -93,6 +93,7 @@ const PCCreate: (config: IPCCreateConfig) => IPCCreateFactory =
         money: money - (gearCost(arms) - gearCost(armors)),
         arms,
         armors,
+        progress,
       };
     };
 
@@ -104,7 +105,7 @@ const PCCreate: (config: IPCCreateConfig) => IPCCreateFactory =
 const defaultPC: IPC = {
   race: '',
   class: '',
-  level: 0,
+  level: 1,
   movement: 0,
   attributes: {},
   attr_bonus: {},

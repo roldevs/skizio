@@ -4,12 +4,12 @@
   lense:
     - level
 - size: 60px
-  posx: 960
+  posx: 940
   posy: 190
   lense:
     - race
 - size: 60px
-  posx: 1365
+  posx: 1335
   posy: 190
   lense:
     - class
