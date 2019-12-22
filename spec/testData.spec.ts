@@ -2,12 +2,12 @@
 import Bluebird from 'bluebird';
 import { expect } from 'chai';
 import R from 'ramda';
+import { FileLocal } from '../src/lib/common/file/local';
+import { IFileFactory } from '../src/lib/common/typings/file';
 import { IVEEnvClassInfo, IVEEnvFactory, IVEEnvRaceInfo, VEEnv } from '../src/lib/ve-pc/env';
 import { IClassFactory } from '../src/lib/ve-pc/src/class';
-import { FileLocal } from '../src/lib/ve-pc/src/file/local';
 import { ILoaderFactory, Loader } from '../src/lib/ve-pc/src/loader';
 import { IRaceFactory } from '../src/lib/ve-pc/src/race';
-import { IFileFactory } from '../src/lib/ve-pc/typings/file';
 
 const system: string = 've.jdr';
 const file: IFileFactory = FileLocal({ root: './src/lib/ve-pc/' });

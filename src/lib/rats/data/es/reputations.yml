@@ -1,0 +1,30 @@
+anonymous:
+  title: Anónimo
+  description: La gente solo tiene una probabilidad de 1 entre 6 de descubrirte cuando tratas de pasar desapercibido.
+dilettante:
+  title: Diletante
+  description: Tienes amigos en las altas esferas y eres bienvenido en los círculos más exclusivos de la sociedad.
+famous:
+  title: Famoso
+  description: La mayoría de la gente intentará cumplir tus exigencias, siempre que tenga sentido.
+feared:
+  title: Temido
+  description: La mayor parte de la gente reculará si saben quién eres.
+haunted:
+  title: Atormentado
+  description: Tus pesadillas son un escudo contra el horror. Las pérdidas de PUNTOS DE CORDURA se reducen en uno, excepto cuando aprendes un hechizo.
+lucky:
+  title: Afortunado
+  description: Una vez por sesión de juego, puedes repetir una tirada que hayas hecho
+old:
+  title: Anciano
+  description: Lo has visto y oído todo. Eres inmune a cualquier tipo de control mental.
+shady:
+  title: Sombrío
+  description: Tienes contactos en los bajos fondos y acceso a mercancía ilegal, como drogas o armas.
+weird:
+  title: Rarito
+  description: La gente se siente incómoda ante tu presencia. Los animales nunca te atacan.
+well_traveled:
+  title: Viajero
+  description: Nunca te pierdes en tierra firme. Aprendes nuevos idiomas bastante rápido.

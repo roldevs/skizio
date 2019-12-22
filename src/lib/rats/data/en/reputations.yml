@@ -1,0 +1,30 @@
+anonymous:
+  title: Anonymous
+  description: people only have 1 in a 6 chance to notice you when you try to be sneaky.
+dilettante:
+  title: Dilettante
+  description: you have friends in high places and are welcome in the higher circles of society.
+famous:
+  title: Famous
+  description: most people will try to meet your demands.
+feared:
+  title: Feared
+  description: most people will back down if they know who you are.
+haunted:
+  title: Haunted
+  description: your own nightmares are a shield against the Horror. SANITY POINT losses are reduced by 1 (except when learning a spell).
+lucky:
+  title: Lucky
+  description: once per session you can reroll any dire roll you’ve made.
+old:
+  title: Old
+  description: you’ve seen and heard it all. You are immune to any kind of mind control.
+shady:
+  title: Shady
+  description: you have contacts in the Underworld and access to illegal stuff, from drugs to firearms.
+weird:
+  title: Weird
+  description: you make people uneasy. Animals never attack you.
+well_traveled:
+  title: Well-Traveled
+  description: you never get lost as long as you’re above ground. You learn new languages quite fast.

@@ -1,0 +1,42 @@
+artist:
+  title: Artista
+  description: Recuperas todos tus PUNTOS DE CORDURA creando una obra que se base en lo que te ha aterrorizado. Necesitas una hora para hacerlo.
+boxer:
+  title: Boxeador
+  description: Cuando luches a puñetazo limpio, tira 2d6 para el daño y quédate con el dado más alto.
+detective:
+  title: Detective
+  description: Tienes contactos en la policía y un éxito en una tirada de INGENIO te permite saber si alguien te ha mentido.
+scholar:
+  title: Estudioso
+  description: Elige un campo de estudio. Siempre tienes éxito en cualquier tarea que requiera ese conocimiento.
+burglar:
+  title: Ladrón
+  description: Puedes abrir cualquier caja fuerte o cualquier cerradura en 1d6 minutos, si tienes el equipamiento adecuado.
+lumebrjack:
+  title: Leñador
+  description: Estás acostumbrado a condiciones muy duras de vida. Ganas 2 PUNTOS DE VIDA.
+magician:
+  title: Mago
+  description: Cuando hace pequeños trucos de magia (ocultar objetos, escaparse de ataduras, etc.), el personaje tiene éxito automáticamente.
+mechanic:
+  title: Mecánico
+  description: Puedes arreglar lo que sea en 1d6 minutos.
+doctor:
+  title: Médico
+  description: Curas 1d6 PUNTOS DE VIDA a una persona herida. Necesitas cinco minutos para hacerlo.
+occultist:
+  title: Ocultista
+  description: Conoces un hechizo (consulta la página 22) y dos lenguas muertas.
+journalist:
+  title: Periodista
+  description: Eres bueno haciendo que la gente hable. Pasa una hora con ellos y conseguirás toda la información que quieras.
+psychologist:
+  title: Psicólogo
+  description: Puedes restablecer todos los PUNTOS DE CORDURA de una persona en una hora. No funciona contigo mismo.
+soldier:
+  title: Soldado
+  description: Durante un TURNO de combate, elige cuándo actuar.
+zoologist:
+  title: Zoólogo
+  description: Ganas +2 al daño cuando golpees a una criatura a la que ya hayas derrotado una vez.

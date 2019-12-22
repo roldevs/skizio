@@ -1,12 +1,13 @@
 import { Canvas, createCanvas } from 'canvas';
 import R from 'ramda';
+import { FileLocal } from '../common/file/local';
+import { IFileFactory } from '../common/typings/file';
 import { Attributes, IAttributesFactory } from './src/attributes';
 import { BonusThree } from './src/bonus/three';
 import { BonusTwo } from './src/bonus/two';
 import { CanvasSheet, ICanvasSheetConfig } from './src/canvas/sheet';
 import { IClassFactory } from './src/class';
 import { Dice } from './src/dice';
-import { FileLocal } from './src/file/local';
 import { Gear, IGearFactory } from './src/gear';
 import { Habilities, IHabilitiesFactory } from './src/habilities';
 import { HitPoints, IHitPointsFactory } from './src/hit_points';
@@ -17,7 +18,6 @@ import { IPCIncreaseFactory, PCIncrease } from './src/pc/increase';
 import { IProgressFactory, Progress } from './src/progress';
 import { IRaceFactory } from './src/race';
 import { TBonus } from './typings/bonus';
-import { IFileFactory } from './typings/file';
 import { IPC } from './typings/pc';
 
 interface IVEPCConfig {

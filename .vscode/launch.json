@@ -8,19 +8,26 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/index.ts"
+      "program": "${workspaceFolder}/rats.ts"
     },
     {
-        "name": "Launch index.ts",
-        "type": "node",
-        "request": "launch",
-        "runtimeArgs": [
-            "-r",
-            "ts-node/register"
-        ],
-        "args": [
-            "${workspaceFolder}/server.ts"
-        ]
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Rats",
+      "program": "${workspaceFolder}/rats.ts",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "name": "Launch index.ts",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+          "-r",
+          "ts-node/register"
+      ],
+      "args": [
+          "${workspaceFolder}/server.ts"
+      ]
     },
     {
       "type": "node",

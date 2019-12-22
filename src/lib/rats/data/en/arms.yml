@@ -1,0 +1,28 @@
+- name: Hatchet
+  damage: 1d6
+- name: Bayonet
+  damage: 1d6
+- name: Brass knuckles
+  damage: 1d6
+- name: Horsewhip
+  damage: 1d6
+- name: Razorblade
+  damage: 1d6
+- name: Colt 1911
+  damage: 1d6
+- name: Swordcane
+  damage: 1d6
+- name: Fireaxe
+  damage: 2d6
+- name: Thompson SMG
+  damage: 2d6
+- name: Model 12 Trench gun
+  damage: 2d6
+- name: Lee-Enfield MKIII
+  damage: 2d6
+- name: Bow or crossbow
+  damage: 2d6
+- name: Mounted bayonet
+  damage: 2d6
+- name: Cavalry saber
+  damage: 2d6

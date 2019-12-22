@@ -2,6 +2,8 @@
 import crossroads from 'crossroads';
 import * as hasher from 'hasher';
 import * as R from 'ramda';
+import homePage from './pages/home';
+import ratsPage from './pages/rats';
 import vePage from './pages/ve';
 
 const bypassed: (request: any) => void =
@@ -36,14 +38,14 @@ const setLocale: (core: any, page: any) => (options: string[]) => any =
   (core, page) => (options) => {
     if (emptyOptions(options)) {
       core.locale.set('es');
-      return hasher.setHash('/ve/es');
+      return hasher.setHash(`es/home`);
     }
     core.locale.set(options);
     return page(options);
   };
 
-const homePage: () => any =
-  () => hasher.setHash('/ve');
+const homePageRoute: (core: any) => any =
+  (core) => setLocale(core, homePage({ core }).page);
 
 const initRouter: (config: {
   core: any,
@@ -55,8 +57,10 @@ const initRouter: (config: {
 
   const init: () => any =
   () => {
-    addRoute('/ve/:locale:', setLocale(config.core, vePage({core: config.core}).page));
-    addRoute('/', homePage()); // Redirect to VE
+    addRoute('/:locale:/ve', setLocale(config.core, vePage({core: config.core}).page));
+    addRoute('/:locale:/rats', setLocale(config.core, ratsPage({core: config.core}).page));
+    addRoute('/:locale:/home', homePageRoute(config.core));
+    addRoute('/', homePageRoute(config.core));
     initHasher();
   };
 

@@ -1,7 +1,6 @@
 import Bluebird from 'bluebird';
-import R from 'ramda';
+import { IFileFactory } from '../../../common/typings/file';
 import { IClassDef } from '../../typings/class';
-import { IFileFactory } from '../../typings/file';
 import { IRaceDef } from '../../typings/race';
 
 interface IFileTestDefinition {

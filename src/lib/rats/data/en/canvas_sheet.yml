@@ -1,0 +1,64 @@
+- size: 24px
+  posx: 355
+  posy: 70
+  lense:
+    - name
+- size: 24px
+  posx: 420
+  posy: 120
+  lense:
+    - profession
+    - title
+- size: 24px
+  posx: 420
+  posy: 180
+  lense:
+    - reputation
+    - title
+- size: 24px
+  posx: 210
+  posy: 255
+  lense:
+    - brawn
+- size: 24px
+  posx: 210
+  posy: 295
+  lense:
+    - dexterity
+- size: 24px
+  posx: 210
+  posy: 335
+  lense:
+    - violence
+- size: 24px
+  posx: 210
+  posy: 415
+  lense:
+    - wits
+- size: 24px
+  posx: 210
+  posy: 375
+  lense:
+    - willpower
+- size: 24px
+  posx: 650
+  posy: 250
+  lense:
+    - hp
+- size: 24px
+  posx: 650
+  posy: 330
+  lense:
+    - sp
+- size: 20px
+  posx: 100
+  posy: 540
+  maxWidth: 250
+  lineHeight: 24
+  lense:
+    - gear
+- size: 20px
+  posx: 450
+  posy: 540
+  lense:
+    - arms

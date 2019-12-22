@@ -9,7 +9,7 @@ import session from 'express-session';
 import lusca from 'lusca';
 import morgan from 'morgan';
 import path from 'path';
-import routes from './src/server/routes';
+import Router from './src/server/router';
 
 const title = process.env.APP_NAME;
 const dsn: string = process.env.SENTRY_DNS!;
@@ -43,7 +43,8 @@ app.use(
   express.static(staticsFolder, { maxAge: 31557600000 }),
 );
 
-app.use('/api', routes);
+// Initialize the API router
+Router(app);
 
 app.get('/', (_, res: any) => res.render('home', { title }));
 

@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
+import { FileLocal } from '../../../../lib/common/file/local';
+import { IFileFactory } from '../../../../lib/common/typings/file';
 import { IVEEnvRaceInfo, VEEnv } from '../../../../lib/ve-pc/env';
-import { FileLocal } from '../../../../lib/ve-pc/src/file/local';
-import { IFileFactory } from '../../../../lib/ve-pc/typings/file';
 import trackEvent from '../../../track';
 
 // Params: locale, leel, race, class

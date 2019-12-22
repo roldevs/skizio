@@ -1,0 +1,28 @@
+- name: Bastón-estoque
+  damage: 1d6
+- name: Bayoneta
+  damage: 1d6
+- name: Colt 1911
+  damage: 1d6
+- name: Látigo
+  damage: 1d6
+- name: Hacha
+  damage: 1d6
+- name: Navaja
+  damage: 1d6
+- name: Puño americano
+  damage: 1d6
+- name: Arco o ballesta
+  damage: 2d6
+- name: Bayoneta calada en un rifle
+  damage: 2d6
+- name: Escopeta Winchester M12 de corredera
+  damage: 2d6
+- name: Hacha contra incendios
+  damage: 2d6
+- name: Rifle Lee-Enfield MKIII
+  damage: 2d6
+- name: Sable de caballería
+  damage: 2d6
+- name: Subfusil Thompson
+  damage: 2d6

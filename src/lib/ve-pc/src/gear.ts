@@ -1,6 +1,6 @@
 import R from 'ramda';
+import { randomFromArray } from '../../common/utils';
 import { ILoaderFactory } from './loader';
-import { randomFromArray } from './utils';
 
 interface IArm {
   name: string;

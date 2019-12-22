@@ -1,6 +1,6 @@
+import { FileLocal } from '../common/file/local';
+import { IFileFactory } from '../common/typings/file';
 import { IVEEnvFactory, VEEnv } from './env';
-import { FileLocal } from './src/file/local';
-import { IFileFactory } from './typings/file';
 
 const file: IFileFactory = FileLocal({
   root: './',

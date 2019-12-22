@@ -1,5 +1,5 @@
 import R from 'ramda';
-import { IFileFactory } from '../typings/file';
+import { IFileFactory } from '../../common/typings/file';
 import { ITalentLocaleInfo } from '../typings/talent';
 import { ICanvasElement } from './canvas/sheet';
 import { Class, IClassFactory } from './class';

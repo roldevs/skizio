@@ -1,0 +1,42 @@
+artist:
+  title: Artist
+  description: regain all your SANITY POINTS by creating a work based on what frightened you. You need 1 hour to do so.
+boxer:
+  title: Boxer
+  description: when fighting bare-handed, roll 2D6 for damage and keep the die giving the best result.
+detective:
+  title: Detective
+  description: you have contacts in the police force and a successful WITS roll allows you to see if someone lied to you.
+scholar:
+  title: Scholar
+  description: Pick one field of study. You’re always successful in any tasks requiring that knowledge.
+burglar:
+  title: Burglar
+  description: you can open any safe or pick any lock in 1D6 minutes (if you have the adequate equipment).
+lumberjack:
+  title: Lumberjack
+  description: you’re used to hard living conditions. +2 HIT POINTS.
+magician:
+  title: Magician
+  description: the character automatically succeeds at doing small magic tricks (palming objects, escape from bonds…).
+mechanic:
+  title: Mechanic
+  description: you can repair anything in 1D6 minutes.
+doctor:
+  title: Medical Doctor
+  description: restore 1D6 HP to a wounded person. You need 5 minutes to do so.
+occultist:
+  title: Occultist
+  description: you know one spell (see page 10) and two dead languages.
+journalist:
+  title: Journalist
+  description: you’re good at making people talk. Spend 1 hour with them and you get all the info you want.
+psychologist:
+  title: Psychologist
+  description: you can restore all SANITY POINTS to one person in 1 hour. You cannot use this on yourself.
+soldier:
+  title: Soldier
+  description: during a combat TURN, choose when it’s your turn to act.
+zoologist:
+  title: Zoologist
+  description: get +2 to damage when you hit a creature you already defeated once.

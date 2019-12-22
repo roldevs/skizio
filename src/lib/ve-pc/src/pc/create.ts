@@ -1,18 +1,16 @@
 import R from 'ramda';
-import { IBonusFactory, TBonus } from '../../typings/bonus';
+import { randomFromArray } from '../../../common/utils';
 import { IClassProgressItem } from '../../typings/class';
 import { IHash } from '../../typings/common';
 import { IPC } from '../../typings/pc';
 import { IAttributesFactory } from '../attributes';
 import { IClassFactory } from '../class';
-import { Dice, TDice } from '../dice';
+import { TDice } from '../dice';
 import { IArm, IArmor, IGearFactory } from '../gear';
 import { IHabilitiesFactory } from '../habilities';
 import { HitPoints } from '../hit_points';
-import { Items } from '../items';
 import { Progress } from '../progress';
 import { IRaceFactory } from '../race';
-import { randomFromArray } from '../utils';
 
 interface IPCCreateConfig {
   habilities: IHabilitiesFactory;

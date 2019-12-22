@@ -203,6 +203,7 @@ const viewFn: (model: IVEFormModelFactory) => VNode =
     return h('div', {
       class: {
         ui: true,
+        basic: true,
         segment: true,
       },
     }, [

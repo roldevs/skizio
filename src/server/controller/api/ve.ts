@@ -3,7 +3,7 @@ import vePcClassesRequest from './ve/classes';
 import vePC from './ve/pc';
 import vePcRacesRequest from './ve/races';
 
-const indexRandomApiController = () => {
+const veApiController = () => {
   const sheet = (req: any, res: any) => {
     return vePC(req, res).then((data) => {
       res.setHeader('Content-Type', 'image/png');
@@ -36,4 +36,4 @@ const indexRandomApiController = () => {
   };
 };
 
-export default indexRandomApiController;
+export default veApiController;

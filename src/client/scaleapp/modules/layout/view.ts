@@ -1,6 +1,7 @@
 import * as R from 'ramda';
 import {h} from 'snabbdom';
 import {VNode} from 'snabbdom/vnode';
+import { ILayoutModelFactory } from './model';
 
 interface IMenuOption {
   label: string;
@@ -9,6 +10,17 @@ interface IMenuOption {
     [key: string]: boolean;
   };
 }
+
+const texts: any = {
+  en: {
+    ve: 'Vieja Escuela',
+    rats: 'Rats in the Walls',
+  },
+  es: {
+    ve: 'Vieja Escuela',
+    rats: 'Ratas en las paredes',
+  },
+};
 
 const dropdownHook: () => (vnode: VNode) => any =
 () => (vnode) => {
@@ -88,14 +100,14 @@ const menu: (label: VNode, options: IMenuOption[]) => VNode =
 
 const localeDropdown: (locale: string) => VNode =
   (locale) => menu(localeLabel(locale), [{
-    link: '#/ve/es',
+    link: '#/es/home',
     label: 'Español',
     icon: {
       es: true,
       flag: true,
     },
   }, {
-    link: '#/ve/en',
+    link: '#/en/home',
     label: 'English',
     icon: {
       gb: true,
@@ -124,20 +136,29 @@ const topNav: (locale: string) => VNode =
           header: true,
           item: true,
         },
+        attrs: { href: `#/${locale}/home` },
       }, 'Skizio' ),
+      h('a', {
+        class: { item: true },
+        attrs: { href: `#/${locale}/ve` },
+      }, texts[locale].ve ),
+      h('a', {
+        class: { item: true },
+        attrs: { href: `#/${locale}/rats` },
+      }, texts[locale].rats ),
     ]),
     localeDropdown(locale),
   ]);
 };
 
-const viewFn: (locale: string) => VNode =
-(locale) => {
+const viewFn: (model: ILayoutModelFactory) => VNode =
+(model) => {
   return h('div', {
     props: {
       id: 'application',
     },
   }, [
-    topNav(locale),
+    topNav(model.stream$().locale),
     h('div', {
       class: {
         ui: true,

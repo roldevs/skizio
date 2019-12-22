@@ -1,9 +1,9 @@
 import Bluebird from 'bluebird';
 import R from 'ramda';
+import { IFileFactory } from '../common/typings/file';
 import { IClassFactory } from './src/class';
 import { ILoaderFactory, Loader } from './src/loader';
 import { IRaceFactory } from './src/race';
-import { IFileFactory } from './typings/file';
 
 interface IVEEnvRaceInfo {
   name: string;

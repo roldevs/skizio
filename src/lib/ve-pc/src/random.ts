@@ -1,5 +1,5 @@
 import R from 'ramda';
-import { randomFromArray } from './utils';
+import { randomFromArray } from '../../common/utils';
 
 interface IRandomItem<T> {
   item: T;
