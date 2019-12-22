@@ -86,7 +86,7 @@ const CanvasSheet: TCanvasSheet =
       (pcObject, element) => {
         const armItem: IArmItem = R.view(R.lensPath(element.lense), pcObject);
         const text: string = `${armItem.name} (${armItem.damage})`;
-        context.fillText(text, element.posx, element.posy);
+        return printWrappedElement(text, element);
       };
 
     // TODO: Apply SOLID principles

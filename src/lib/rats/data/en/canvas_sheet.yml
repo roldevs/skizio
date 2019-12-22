@@ -60,5 +60,7 @@
 - size: 20px
   posx: 450
   posy: 540
+  maxWidth: 250
+  lineHeight: 24
   lense:
     - arms
