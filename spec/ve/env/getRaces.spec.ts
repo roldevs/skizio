@@ -32,6 +32,8 @@ describe('VEEnv#getRaces', () => {
       }
       return '';
     },
+    fileSize: () => 0,
+    pickLine: () => Bluebird.resolve(''),
   };
 
   const env: IVEEnvFactory = VEEnv({ system, file });

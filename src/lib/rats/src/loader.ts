@@ -1,3 +1,4 @@
+import Bluebird from 'bluebird';
 import R from 'ramda';
 import { IFileFactory } from '../../common/typings/file';
 import { ICanvasElement } from '../../ve-pc/src/canvas/sheet';
@@ -18,6 +19,8 @@ interface ILoaderFactory {
   getArms: () => IArmFactory;
   getCanvasSheetData: () => ICanvasElement[];
   getCanvasSheetImagePath: () => string;
+  getGeneratedPhotosSize: (gender: string) => number;
+  pickGeneratedPhotosUrl: (gender: string, pos: number) => Bluebird<string>;
 }
 
 type TLoader = (config: ILoaderConfig) => ILoaderFactory;
@@ -49,6 +52,15 @@ const Loader: TLoader = (config) => {
   const getCanvasSheetData: () => ICanvasElement[] =
       R.compose(config.file.loadYAML, canvasSheetDataPath);
 
+  const getGeneratedPhotosPath: (gender: string) => string =
+    (gender) => `data/images/${gender}.txt`;
+
+  const getGeneratedPhotosSize: (gender: string) => number =
+    (gender) => config.file.fileSize(getGeneratedPhotosPath(gender));
+
+  const pickGeneratedPhotosUrl: (gender: string, pos: number) => Bluebird<string> =
+    (gender, pos) => config.file.pickLine(getGeneratedPhotosPath(gender), pos);
+
   return {
     getReputations,
     getProfessions,
@@ -56,6 +68,8 @@ const Loader: TLoader = (config) => {
     getArms,
     getCanvasSheetData,
     getCanvasSheetImagePath,
+    getGeneratedPhotosSize,
+    pickGeneratedPhotosUrl,
   };
 };
 

@@ -39,6 +39,8 @@ describe('Gear#buyArms', () => {
       addRoot: () => '',
       listDir,
       loadYAML,
+      fileSize: () => 0,
+      pickLine: () => Bluebird.resolve(''),
     };
   };
 

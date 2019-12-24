@@ -29,7 +29,7 @@ interface ICanvasSheetConfig {
 }
 
 interface ICanvasSheetFactory {
-  fill: (pc: IRatsPC) => Promise<Canvas>;
+  fill: (pc: IRatsPC) => Bluebird<Canvas>;
 }
 
 type TCanvasSheet = (config: ICanvasSheetConfig) => ICanvasSheetFactory;
@@ -119,8 +119,8 @@ const CanvasSheet: TCanvasSheet =
         return { posx: 280, posy: 226, width: 190, height: 214 };
       };
 
-    const loadPCImage: (pc: IRatsPC) => Promise<any> =
-      (pc) => new Promise((resolve) => {
+    const loadPCImage: (pc: IRatsPC) => Bluebird<any> =
+      (pc) => new Bluebird((resolve) => {
         const img = new Image();
         img.onload = () => {
           const rect: IRect = PCImageRect(config.locale);
@@ -130,7 +130,7 @@ const CanvasSheet: TCanvasSheet =
         img.src = pc.imageUrl;
       });
 
-    const fill: (pc: IRatsPC) => Promise<Canvas> =
+    const fill: (pc: IRatsPC) => Bluebird<Canvas> =
       (pc: IRatsPC) => {
         return loadPCImage(pc).then(() => {
           return loadImage(config.loader.getCanvasSheetImagePath()).then((image) => {

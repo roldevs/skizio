@@ -102,6 +102,8 @@ describe('Localize#getRace', () => {
       }
       return classDef;
     },
+    fileSize: () => 0,
+    pickLine: () => Bluebird.resolve(''),
   };
   const config: ILoaderConfig = {
     file: fileTestConfig,

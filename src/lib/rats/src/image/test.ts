@@ -4,8 +4,8 @@ import { EGender } from '../../typings/pc';
 
 const TestImages: () => IImageFactory =
   () => {
-    const pick: (gender: EGender) => Promise<string> =
-      () => Promise.resolve('https://randomuser.me/api/portraits/women/66.jpg');
+    const pick: (gender: EGender) => Bluebird<string> =
+      () => Bluebird.resolve('https://randomuser.me/api/portraits/women/66.jpg');
     return {
       pick,
     };

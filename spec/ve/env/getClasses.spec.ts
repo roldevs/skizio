@@ -36,6 +36,8 @@ describe('VEEnv#getClasses', () => {
       }
       return '';
     },
+    fileSize: () => 0,
+    pickLine: () => Bluebird.resolve(''),
   };
 
   const env: IVEEnvFactory = VEEnv({ system, file });

@@ -13,8 +13,12 @@ const UINames: (config: IUINamesConfig) => INameFactory =
     const nameUrl: (gender: EGender) => string =
       (gender) => `https://uinames.com/api/?gender=${gender}&amount=1&region=${config.region}`;
 
-    const request: (gender: EGender) => Promise<any> =
-      (gender) => axios.get(nameUrl(gender));
+    const request: (gender: EGender) => Bluebird<any> =
+      (gender) => {
+        return new Bluebird((resolve, reject) => {
+          axios.get(nameUrl(gender)).then(resolve).catch(reject);
+        });
+      };
 
     const getName: (value: any) => string = R.view(R.lensPath(['data', 'name']));
     const getSurname: (value: any) => string = R.view(R.lensPath(['data', 'surname']));
@@ -22,7 +26,7 @@ const UINames: (config: IUINamesConfig) => INameFactory =
     const getFullName: (value: any) => string =
       (value) => `${getName(value)} ${getSurname(value)}`;
 
-    const pick: (gender: EGender) => Promise<string> =
+    const pick: (gender: EGender) => Bluebird<string> =
       (gender) => request(gender).then(getFullName);
 
     return {

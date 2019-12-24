@@ -6,6 +6,7 @@ import { IFileFactory } from './src/lib/common/typings/file';
 import { Attributes } from './src/lib/rats/src/attributes';
 import { CanvasSheet, ICanvasSheetConfig } from './src/lib/rats/src/canvas/sheet';
 import { GeneratedPhotos } from './src/lib/rats/src/image/generatedPhotos';
+import { GeneratedPhotosLocal } from './src/lib/rats/src/image/generatedPhotosLocal';
 import { TestImages } from './src/lib/rats/src/image/test';
 import { ILoaderFactory, Loader } from './src/lib/rats/src/loader';
 import { UINames } from './src/lib/rats/src/name/uinames';
@@ -31,6 +32,8 @@ const file: IFileFactory = FileLocal({
 
 const loader: ILoaderFactory = Loader({ file, locale });
 
+const il: IImageFactory = GeneratedPhotosLocal({ loader });
+
 const pcCreator: IRatsPCFactory = RatsPC({
   gender: EGender.female,
   attributes: Attributes(),
@@ -40,7 +43,7 @@ const pcCreator: IRatsPCFactory = RatsPC({
   reputation: loader.getReputations(),
   gear: loader.getGear(),
   arms: loader.getArms(),
-  image: i,
+  image: il,
   name: UINames({ region: 'England' }),
 });
 

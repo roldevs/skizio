@@ -31,6 +31,8 @@ describe('Gear#validArmors', () => {
       addRoot: () => '',
       listDir,
       loadYAML,
+      fileSize: () => 0,
+      pickLine: () => Bluebird.resolve(''),
     };
   };
 

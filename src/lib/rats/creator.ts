@@ -1,3 +1,4 @@
+import Bluebird = require('bluebird');
 import { Canvas, createCanvas } from 'canvas';
 import { FileLocal } from '../common/file/local';
 import { IFileFactory } from '../common/typings/file';
@@ -5,6 +6,7 @@ import { Attributes } from '../rats/src/attributes';
 import { CanvasSheet, ICanvasSheetConfig } from '../rats/src/canvas/sheet';
 import { ILoaderFactory, Loader } from '../rats/src/loader';
 import { HitPoints } from '../rats/src/points/hitPoints';
+import { GeneratedPhotosLocal } from './src/image/generatedPhotosLocal';
 import { UINames } from './src/name/uinames';
 import { IRatsPCFactory, RatsPC } from './src/pc';
 import { SanityPoints } from './src/points/sanityPoints';
@@ -14,12 +16,11 @@ import { EGender, IRatsPC } from './typings/pc';
 interface IRatsCreatorConfig {
   locale: string;
   gender: EGender;
-  image: IImageFactory;
 }
 
 interface IRatsCreatorFactory {
-  create: () => Promise<IRatsPC>;
-  fillCanvas: () => Promise<Canvas>;
+  create: () => Bluebird<IRatsPC>;
+  fillCanvas: () => Bluebird<Canvas>;
 }
 
 type TRatsCreator = (config: IRatsCreatorConfig) => IRatsCreatorFactory;
@@ -28,6 +29,7 @@ const RatsCreator: TRatsCreator =
   (config) => {
     const file: IFileFactory = FileLocal({ root: './src/lib/rats/' });
     const loader: ILoaderFactory = Loader({ file, locale: config.locale });
+    const image: IImageFactory = GeneratedPhotosLocal({ loader });
 
     const pcCreator: IRatsPCFactory = RatsPC({
       attributes: Attributes(),
@@ -38,13 +40,13 @@ const RatsCreator: TRatsCreator =
       reputation: loader.getReputations(),
       gear: loader.getGear(),
       arms: loader.getArms(),
-      image: config.image,
+      image,
       name: UINames({ region: 'England' }),
     });
 
-    const create: () => Promise<IRatsPC> = pcCreator.generate;
+    const create: () => Bluebird<IRatsPC> = pcCreator.generate;
 
-    const fillCanvas: () => Promise<Canvas> =
+    const fillCanvas: () => Bluebird<Canvas> =
       () => {
         const canvas = createCanvas(736, 1044);
         const canvasConfig: ICanvasSheetConfig = {

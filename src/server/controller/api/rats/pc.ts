@@ -10,14 +10,9 @@ const ratsPcRequest: (req: any, res: any) => Bluebird<any> =
 (req) => {
   const url = `/api/rats/${req.params.locale}/pc.json`;
   return trackEvent(url, 'Rats PC').then(() => {
-    const image: IImageFactory = GeneratedPhotos({
-      key: process.env.GENERATED_PHOTOS_KEY!,
-      imgIndex: 4,
-    });
     const creator: IRatsCreatorFactory = RatsCreator({
       locale: req.params.locale,
       gender: req.query.gender,
-      image,
     });
 
     return creator.fillCanvas().then((c: Canvas) => {

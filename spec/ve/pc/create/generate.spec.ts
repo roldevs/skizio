@@ -88,6 +88,8 @@ describe('PCCreate#get', () => {
       addRoot: () => '',
       listDir,
       loadYAML,
+      fileSize: () => 0,
+      pickLine: () => Bluebird.resolve(''),
     };
   };
 
