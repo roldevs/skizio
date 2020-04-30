@@ -31,7 +31,7 @@
     "express-session": "^1.17.0",
     "flyd": "^0.2.8",
     "hasher": "^1.2.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-yaml": "^3.13.1",
     "lusca": "^1.6.1",
     "morgan": "^1.9.1",
