@@ -7,8 +7,8 @@ interface IRandomItem<T> {
 }
 
 interface IRandomFactory {
-  pickFromList: <T>(items: Array<IRandomItem<T>>) => T | null;
-  probabilityList: <T>(items: Array<IRandomItem<T>>) => T[];
+  pickFromList: <T>(items: IRandomItem<T>[]) => T | null;
+  probabilityList: <T>(items: IRandomItem<T>[]) => T[];
 }
 
 type TRamdom = () => IRandomFactory;
@@ -16,15 +16,15 @@ type TRamdom = () => IRandomFactory;
 const Random: TRamdom = () => {
   const getProperty = R.prop('priority');
   const getItem = R.prop('item');
-  const getPriorities: <T>(items: Array<IRandomItem<T>>) => number[] = R.map(getProperty);
+  const getPriorities: <T>(items: IRandomItem<T>[]) => number[] = R.map(getProperty);
   const getMaxValue: (list: number[]) => any = R.reduce(R.max, -Infinity);
-  const getMaxPriority: <T>(items: Array<IRandomItem<T>>) => number = R.compose(getMaxValue, getPriorities);
-  const getRamdomItem: <T>(items: Array<IRandomItem<T>>) => T = (items) => getItem(randomFromArray(items));
+  const getMaxPriority: <T>(items: IRandomItem<T>[]) => number = R.compose(getMaxValue, getPriorities);
+  const getRamdomItem: <T>(items: IRandomItem<T>[]) => T = (items) => getItem(randomFromArray(items));
 
-  const pickFromList: <T>(items: Array<IRandomItem<T>>) => T | null =
+  const pickFromList: <T>(items: IRandomItem<T>[]) => T | null =
     R.ifElse(R.isEmpty, R.always(null), getRamdomItem);
 
-  const probabilityList: <T>(items: Array<IRandomItem<T>>) => T[] =
+  const probabilityList: <T>(items: IRandomItem<T>[]) => T[] =
     (items) => R.reduce((acc: any[], value: IRandomItem<any>) => {
         const maxPriority = getMaxPriority(items);
         return R.concat(

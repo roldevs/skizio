@@ -51,7 +51,7 @@ const testLocale: (locale: string) => void =
     return Bluebird.all([
       env.getRaces(locale),
       env.getClasses(locale),
-    ]).then((result: Array<Array<IVEEnvRaceInfo | IVEEnvClassInfo>>) => {
+    ]).then((result: (IVEEnvRaceInfo | IVEEnvClassInfo)[][]) => {
       R.forEach(testRace(locale, loader), result[0]);
       R.forEach(testClass(locale, loader), result[1]);
     });

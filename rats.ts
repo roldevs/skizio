@@ -9,7 +9,7 @@ import { GeneratedPhotos } from './src/lib/rats/src/image/generatedPhotos';
 import { GeneratedPhotosLocal } from './src/lib/rats/src/image/generatedPhotosLocal';
 import { TestImages } from './src/lib/rats/src/image/test';
 import { ILoaderFactory, Loader } from './src/lib/rats/src/loader';
-import { UINames } from './src/lib/rats/src/name/uinames';
+import { LocalNames } from './src/lib/rats/src/name/localNames';
 import { IRatsPCFactory, RatsPC } from './src/lib/rats/src/pc';
 import { HitPoints } from './src/lib/rats/src/points/hitPoints';
 import { SanityPoints } from './src/lib/rats/src/points/sanityPoints';
@@ -44,7 +44,7 @@ const pcCreator: IRatsPCFactory = RatsPC({
   gear: loader.getGear(),
   arms: loader.getArms(),
   image: il,
-  name: UINames({ region: 'England' }),
+  name: LocalNames({ loader }),
 });
 
 pcCreator.generate().then((pc: IRatsPC) => {

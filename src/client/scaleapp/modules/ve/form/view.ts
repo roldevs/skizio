@@ -90,13 +90,13 @@ const typeBonusItems: (locale: string) => IDropdownItem[] =
 const getSelectedRace: (model: IVEFormModelFactory) => IDropdownItem | undefined =
   (model) => {
     const state: IVEFormModel = model.stream$();
-    return R.find(R.propEq('value', state.race), raceItems(model));
+    return R.find(R.propEq('value', state.race), raceItems(model)) as IDropdownItem | undefined;
   };
 
 const getSelectedClass: (model: IVEFormModelFactory) => IDropdownItem | undefined =
   (model) => {
     const state: IVEFormModel = model.stream$();
-    return R.find(R.propEq('value', state.class), classItems(model));
+    return R.find(R.propEq('value', state.class), classItems(model)) as IDropdownItem | undefined;
   };
 
 const getRaceText: (model: IVEFormModelFactory) => string | null =

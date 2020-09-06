@@ -32,7 +32,7 @@ const GeneratedPhotos: (options: IGeneratedPhotosConfig) => IImageFactory =
     const getKeyUrlData: (data: any) => any = R.compose(R.nth(options.imgIndex), getUrlsFirstFace);
 
     const getKeyUrls: (data: any) => any = R.compose(R.view(R.lensProp('urls')), R.nth(0), getFaces);
-    const getUrl: (data: any) => string = R.compose(R.head, R.values, getKeyUrlData);
+    const getUrl: (data: any) => string = R.compose(R.head, R.values, getKeyUrlData) as (data: any) => string;
 
     const pick: (gender: EGender) => Bluebird<string> = (gender) => request(gender).then(getUrl);
     return {

@@ -68,7 +68,7 @@ const VEFormModel: TVEFormModel = (sb) => {
       return Bluebird.all([
         sb.services.ve.races(newState.locale, newState.system),
         sb.services.ve.classes(newState.locale, newState.system),
-      ]).then((result: Array<IServiceResult<IVEPCServiceResult>>) => {
+      ]).then((result: IServiceResult<IVEPCServiceResult>[]) => {
         newState = R.set(R.lensProp('races'), getResult(result[0]), newState);
         newState = R.set(R.lensProp('classes'), getResult(result[1]), newState);
         streamLoading$(false, newState);

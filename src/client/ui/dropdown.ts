@@ -23,7 +23,7 @@ type TDropdown = (config: IDropdownConfig) => {
 };
 
 const findOption: (options: IDropdownItem[], value: string) => IDropdownItem | undefined =
-(options, value) => R.find(R.propEq('value', value), options);
+  (options, value) => R.find(R.propEq('value', value), options) as IDropdownItem | undefined;
 
 const doEvent: (config: IDropdownConfig) => (value: any, text: any, $selectedItem: any) => void =
 (config) => (value) => {

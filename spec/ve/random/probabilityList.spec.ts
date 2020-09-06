@@ -10,7 +10,7 @@ describe('Random#probabilityList', () => {
   });
   describe('with several', () => {
     it('returns the lists with repeated elements by priority', () => {
-      const list: Array<IRandomItem<string>> = [{
+      const list: IRandomItem<string>[] = [{
         item: 'a',
         priority: 1,
       }, {

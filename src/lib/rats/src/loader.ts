@@ -21,6 +21,8 @@ interface ILoaderFactory {
   getCanvasSheetImagePath: () => string;
   getGeneratedPhotosSize: (gender: string) => number;
   pickGeneratedPhotosUrl: (gender: string, pos: number) => Bluebird<string>;
+  getGeneratedNameSize: (gender: string) => number;
+  pickGeneratedName: (gender: string, pos: number) => Bluebird<string>;
 }
 
 type TLoader = (config: ILoaderConfig) => ILoaderFactory;
@@ -55,11 +57,20 @@ const Loader: TLoader = (config) => {
   const getGeneratedPhotosPath: (gender: string) => string =
     (gender) => `data/images/${gender}.txt`;
 
+  const getGeneratedNamePath: (gender: string) => string =
+    (gender) => `data/names/${gender}.txt`;
+
   const getGeneratedPhotosSize: (gender: string) => number =
     (gender) => config.file.fileSize(getGeneratedPhotosPath(gender));
 
   const pickGeneratedPhotosUrl: (gender: string, pos: number) => Bluebird<string> =
     (gender, pos) => config.file.pickLine(getGeneratedPhotosPath(gender), pos);
+
+  const getGeneratedNameSize: (gender: string) => number =
+    (gender) => config.file.fileSize(getGeneratedNamePath(gender));
+
+  const pickGeneratedName: (gender: string, pos: number) => Bluebird<string> =
+    (gender, pos) => config.file.pickLine(getGeneratedNamePath(gender), pos);
 
   return {
     getReputations,
@@ -70,6 +81,8 @@ const Loader: TLoader = (config) => {
     getCanvasSheetImagePath,
     getGeneratedPhotosSize,
     pickGeneratedPhotosUrl,
+    getGeneratedNameSize,
+    pickGeneratedName,
   };
 };
 

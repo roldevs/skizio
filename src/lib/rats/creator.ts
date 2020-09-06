@@ -7,7 +7,7 @@ import { CanvasSheet, ICanvasSheetConfig } from '../rats/src/canvas/sheet';
 import { ILoaderFactory, Loader } from '../rats/src/loader';
 import { HitPoints } from '../rats/src/points/hitPoints';
 import { GeneratedPhotosLocal } from './src/image/generatedPhotosLocal';
-import { UINames } from './src/name/uinames';
+import { LocalNames } from './src/name/localNames';
 import { IRatsPCFactory, RatsPC } from './src/pc';
 import { SanityPoints } from './src/points/sanityPoints';
 import { IImageFactory } from './typings/image';
@@ -41,7 +41,7 @@ const RatsCreator: TRatsCreator =
       gear: loader.getGear(),
       arms: loader.getArms(),
       image,
-      name: UINames({ region: 'England' }),
+      name: LocalNames({ loader }),
     });
 
     const create: () => Bluebird<IRatsPC> = pcCreator.generate;

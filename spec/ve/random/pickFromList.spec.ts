@@ -15,7 +15,7 @@ describe('Random#pickFromList', () => {
   });
   describe('with two elements', () => {
     it('returns the value of th element', () => {
-      const list: Array<IRandomItem<string>> = [{
+      const list: IRandomItem<string>[] = [{
         item: 'Test1', priority: 1,
       }, {
         item: 'Test2', priority: 1,

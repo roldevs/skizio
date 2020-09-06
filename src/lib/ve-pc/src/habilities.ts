@@ -41,7 +41,7 @@ const Habilities: (config: IHabilitiesConfig) => IHabilitiesFactory =
 
     const pickHability: () => string | null = () => {
       const random: IRandomFactory = Random();
-      const items: Array<IRandomItem<string>> = R.map(getRandomItem, config.class.getHabilites());
+      const items: IRandomItem<string>[] = R.map(getRandomItem, config.class.getHabilites());
       return random.pickFromList(items);
     };
 
