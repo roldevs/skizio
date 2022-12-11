@@ -27,7 +27,7 @@
     "crossroads": "^0.12.2",
     "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.1",
     "flyd": "^0.2.8",
     "hasher": "^1.2.0",
